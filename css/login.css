@@ -1,0 +1,13 @@
+.header{
+	background-color: #333333;
+	height: 55px;
+}
+
+.content{
+	background-color: #e5e5e5;
+}
+
+#login_button{
+	color:#ffffff;
+	background-color: #5ABABB;
+}
