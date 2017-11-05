@@ -4,10 +4,34 @@
 }
 
 .content{
+	margin-left:5px;
 	background-color: #e5e5e5;
+	height: 100%;
 }
 
+.login{
+
+	height: 100%;
+}
 #login_button{
+	left: 151px;
 	color:#ffffff;
 	background-color: #5ABABB;
+}
+
+.vl {
+    border-left: 2px solid #D3D3D3;
+    height: 100px;
+    position: relative;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
+
+#username, #password{
+	width: 150px;
+}
+
+.login_register{
+	margin-left: 150px;
 }

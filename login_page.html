@@ -11,24 +11,27 @@
     	</div>
 	</header>
 	<body>
-		<div class="content">
-			<br><br>
+		<div class="content"><br>
 			<strong> Log In To Your Account </strong>
-			<br>
-			<br>
-			Username <br>
-			<input type="text"name="username" required="required"/>
-			<br> <br>
-			Password <br>
-			<input type="Password" name="password" required="required"/>
-			<br> <br>
-			<button id="login_button" type="button" class="btn btn-md">Log In</button>
-			<br><br>
-			<div id="register">Don't have an account?<br>
-			Create one <a href="#" > here</a></div>
-			
+			<div class="login"><br>
+				<form>
+					Username <br>
+					<input id="username" type="text" name="username" required="required"/><br><br>
+					Password <br>
+					<input id="password" type="Password" name="password" required="required"/>
+					<br><br>
+					<div class="login_register">
+						<button id="login_button" type="submit" class="btn btn-md">Log In</button><br>
+						Don't have an account?<br>
+						Create one <a href="#" >here</a>
+					</div>
+				</form>
+			</div>
+			<br> 
 		</div>
+
 	</body>
 
 </html>
 
+<script type="text/javascript" src="js/login.js"></script>
