@@ -1,37 +1,26 @@
+body{
+	background-color: #eeeeee;
+}
+
 .header{
 	background-color: #333333;
+	padding: 10px;
 	height: 55px;
 }
 
-.content{
-	margin-left:5px;
-	background-color: #e5e5e5;
-	height: 100%;
+.logo{
+	padding-left: 10%;
 }
 
-.login{
-
-	height: 100%;
-}
-#login_button{
-	left: 151px;
-	color:#ffffff;
-	background-color: #5ABABB;
+.cnfrm-btn-xs{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	color: #eeeeee;
+	background-color: rgb(25, 150, 125);
 }
 
-.vl {
-    border-left: 2px solid #D3D3D3;
-    height: 100px;
-    position: relative;
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
-}
-
-#username, #password{
-	width: 150px;
-}
-
-.login_register{
-	margin-left: 150px;
+.cnfrm-btn{
+	color: #eeeeee;
+	background-color: rgb(25, 150, 125);
 }
