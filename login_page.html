@@ -13,84 +13,98 @@
 	<body>
 		<header>
 			<div class="container-fluid header">
-				<div class="row">
+				<div class="row visible-xs-block" id="mobile-header">
+					<div class="col-xs-1"></div>
 					<div class="col-xs-2">
-						<div class="logo">
-							<img src="images/logo_placeholder.png" width="40" height="40" alt="">
-						</div>
+						<img src="images/logo_placeholder.png" width="40" height="40" alt="">
 					</div>
-					<div class="col-xs-10">
+					<div class="col-xs-9"></div>
+				</div>
+				<div class="row hidden-xs" id="dsktop-header">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-2">
+						<img src="images/logo_placeholder.png" width="40" height="40" alt="">
 					</div>
+					<div class="col-sm-9"></div>
 				</div>
 			</div>
 		</header>
 		<div class="container-fluid"><br>
-			<strong> Log In To Your Account </strong>
-			<br><br>
 			<form>
 				<div class="row visible-xs-block">
-					<div class="col-xs-8">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-9">
+						<h4> Log In To Your Account </h4>
+						<br><br>
 						Username <br>
 						<input id="username" class="form-control input-sm" type="text" name="username" maxlength="50" required="required"/>
-						<br><br>
+						<br>
 						Password <br>
 						<input id="password" class="form-control input-sm" type="Password" name="password" maxlength="50" required="required"/>
-						<br><br>
+						<br>
 					</div>
 					<div class="col-xs-2"></div>
 				</div>
 				<div class="row hidden-xs">
+					<div class="col-sm-1"></div>
 					<div class="col-sm-4">
+						<h2> Log In To Your Account </h2>
+						<br><br>
 						Username <br>
 						<input id="username" class="form-control input-sm" type="text" name="username" required="required"/>
-						<br><br>
+						<br>
 						Password <br>
 						<input id="password" class="form-control input-sm" type="Password" name="password" required="required"/>
-						<br><br>
+						<br>
 					</div>
-					<div class="col-sm-8"></div>
-				</div>
-				<div class="row hidden" id="lgn_err_xs">
-					<div class="col-xs-12">
-						Forget your username or password?
-						Find them <a href="/">here</a>
-					</div>
-				</div>
-				<div class="row hidden" id="lgn_err">
-					<div class="col-sm-4"></div>
-					<div class="col-xs-4">
-						Forget your username or password?
-						Find them <a href="/">here</a>
-					</div>
-					<div class="col-sm-4"></div>
-				</div>
-				<div class="row visible-xs-block">
-					<div class="col-xs-12">
-						Don't have an account?<br>
-						Create one <a href="/">here</a>
-					</div>
+					<div class="col-sm-7"></div>
 				</div>
 				<div class="row hidden-xs">
-					<div class="col-sm-4"></div>
-					<div class="col-sm-4">
-						Don't have an account?<br>
-						Create one <a href="/">here</a>
-					</div>
-					<div class="col-sm-4"></div>
-				</div>
-				<div class="row hidden-xs">
-					<div class="col-sm-4"></div>
-					<div class="col-sm-2">
+					<div class="col-sm-5"></div>
+					<div class="col-sm-3">
 						<button class="cnfrm-btn btn btn-sm btn-block" id="login_btn_lg" type="submit">
 							Log In
 						</button>
 					</div>
-					<div class="col-sm-6"></div>
+					<div class="col-sm-4"></div>
 				</div>
-				
 				<button class="cnfrm-btn-xs btn btn-lg btn-block visible-xs-block"  id="login_btn_xs" type="submit">
 					Log In
 				</button>
+				<div class="row visible-xs-block">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-9">
+						Don't have an account?<br>
+						Create one <a href="/">here</a>
+					</div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row hidden-xs">
+					<div class="col-sm-5"></div>
+					<div class="col-sm-3">
+						Don't have an account?<br>
+						Create one <a href="/">here</a>
+					</div>
+					<div class="col-sm-4"></div>
+				</div>
+				<div class="row " id="lgn_err_xs">
+					<br>
+					<div class="col-xs-1"></div>
+					<div class="text-danger col-xs-9">
+						Forget your username or password?<br>
+						Find them <a href="/">here</a>
+					</div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row hidden" id="lgn_err">
+					<br>
+					<div class="col-sm-5"></div>
+					<div class="text-danger col-sm-3">
+						Forget your username or password?<br>
+						Find them <a href="/">here</a>
+					</div>
+					<div class="col-sm-4"></div>
+				</div>
 			</form>
 		</div>
 
