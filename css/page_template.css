@@ -9,9 +9,17 @@ body{
 	min-height: 100%;
 }
 
+h1, h2, h3, h4{
+	color: #eeeeee;
+}
+
+h5, h6{
+	color: #111111;
+}
+
 .header{
+	padding-top: .8em;
 	background-color: #333333;
-	padding-top: 6pt;
 	height: 4em;
 }
 
@@ -19,8 +27,8 @@ body{
 	position: absolute;
 	bottom: 0;
 	color: #999999;
+	padding-top: .4em;
 	background-color: #dddddd;
-	padding: .5em;
 	height: 4em;
 	width: 100%;
 }
@@ -29,10 +37,17 @@ body{
 	padding: 1em;
 }
 
+.title{
+	margin: auto;
+	padding-top: .8em;
+	padding-bottom: .2em;
+}
+
 .cnfrm-btn{
 	color: #eeeeee;
 	background-color: rgb(25, 150, 125);
 }
+
 
 .modal-content{
 	background-color: #eeeeee;
