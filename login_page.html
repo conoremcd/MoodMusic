@@ -15,14 +15,14 @@
 			<div class="row visible-xs-block" id="mobile-header">
 				<div class="col-xs-1"></div>
 				<div class="col-xs-2">
-					<img src="images/logo_placeholder.png" width="40" height="40" alt="">
+					<a href=""><img src="images/logo_placeholder.png" width="40" height="40" alt=""></a>
 				</div>
 				<div class="col-xs-9"></div>
 			</div>
 			<div class="row hidden-xs" id="dsktop-header">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-2">
-					<img src="images/logo_placeholder.png" width="40" height="40" alt="">
+					<a href=""><img src="images/logo_placeholder.png" width="40" height="40" alt=""></a>
 				</div>
 				<div class="col-sm-9"></div>
 			</div>
@@ -56,19 +56,20 @@
 					<div class="col-xs-1"></div>
 					<div class="col-xs-9">
 						Don't have an account?<br>
-						Create one <a href="login_page.html">here</a>
+						Create one <a href="" data-toggle="modal" data-target="#create_account_modal">here</a>
 					</div>
 					<div class="col-xs-2"></div>
 				</div>
-				<div class="row visible-xs msg" id="lgn_err_xs" hidden="false">
+				<div class="row visible-xs-block msg" id="lgn_err_xs" hidden="hidden">
 					<div class="col-xs-1"></div>
 					<div class="text-danger col-xs-9">
 						Forget your username or password?<br>
-						Find them <a href="/">here</a>
+						Find them <a href="" data-toggle="modal" data-target="#recover_account_modal">here</a>
 					</div>
 					<div class="col-xs-2"></div>
 				</div>
 		</form>
+
 		<form onsubmit="return validateLogin(this)" action="test_page.html" method="post">	
 				<div class="row hidden-xs">
 					<div class="col-sm-1"></div>
@@ -104,11 +105,11 @@
 					<div class="col-sm-4"></div>
 				</div>
 
-				<div class="row hidden-xs msg" id="lgn_err" hidden>
+				<div class="row hidden-xs msg" id="lgn_err" hidden="hidden">
 					<div class="col-sm-5"></div>
 					<div class="text-danger col-sm-3">
 						Forget your username or password?<br>
-						Find them <a href="/">here</a>
+						Find them <a href="" data-toggle="modal" data-target="#recover_account_modal">here</a>
 					</div>
 					<div class="col-sm-4"></div>
 				</div>
@@ -117,11 +118,11 @@
 		</div>
 
 
-		<!-- Modal -->
+		<!-- Account Creation Modal -->
 		<div id="create_account_modal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<!-- Modal Content-->
-				<div class="modal-content create-modal">
+				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
         				<h3 class="modal-title">Create A New Account</h3>
@@ -166,14 +167,49 @@
 							</div>
 						</div>
 					    <div class="modal-footer">
-	        				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 	        				<button type="submit" class="btn cnfrm-btn">Create Account</button>
 	      			 	</div>
       			 	</form>
 				</div>
 			</div> 
-
 		</div>
+
+		<!-- Recover Account Modal -->
+		<div id="recover_account_modal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<!-- Modal Content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+        				<h3 class="modal-title">Recover your Account</h3>
+					</div>
+					<form action="account_recovery.html" onsubmit="return validateRecoverAccount(this)" method="post">
+						<div class="modal-body">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col">
+										Please enter your email address below. We will send you an email containing your login information shortly. 
+									</div>
+								</div><br>
+								<div class="row">
+									<div class="col-sm-1"> </div>
+									<div class="col-sm-6">
+										<input type="email" name="email" required="required" placeholder="email" />
+									</div>
+								</div><br>
+								<div id="recover-error" class="row text-danger" hidden></div>
+							</div>
+						</div>
+					    <div class="modal-footer">
+	        				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	        				<button type="submit" class="btn cnfrm-btn">Send an email</button>
+	      			 	</div>
+      			 	</form>
+				</div>
+			</div> 
+		</div>
+
 		<footer class="container-fluid footer">
 			<div class="row visible-xs-block" id="mobile-footer">
 				<div class="col-xs-1"></div>

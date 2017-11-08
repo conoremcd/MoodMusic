@@ -45,8 +45,23 @@ function validateCreateAccount(theForm){
 	if (error === ""){
 		return true;
 	}else{
-		$("#creation-error").html("<div class='col-sm-8 danger-text'>" + error + "</div>");
+		$("#creation-error").html("<div class='col-sm-8'>" + error + "</div>");
 		$("#creation-error").removeAttr("hidden");
+		return false;
+	}
+}
+
+function validateRecoverAccount(theForm){
+	var email = theForm.email.value;
+	var error = "";
+	
+	if (email === "demo@demo.com") {
+		localStorage.setItem("email_recover", email);
+		return true;
+	} else {
+		error = "<div class='col'> The email you have entered was not found in our database. <div>";
+		$("#recover-error").html(error);
+		$("#recover-error").removeAttr("hidden");
 		return false;
 	}
 }
