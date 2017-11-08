@@ -5,10 +5,10 @@
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <link rel="stylesheet" href="css/page_structure.css">
+	  <link rel="stylesheet" href="css/page_template.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script type="text/javascript" src="js/login.js"></script>
+	  <script type="text/javascript" src="js/login_page.js"></script>
 	</head>
 	<body>
 		<header class="container-fluid header">
@@ -28,34 +28,20 @@
 			</div>
 		</header>
 		<div class="container-fluid"><br>
-			<form>
+			<form onsubmit="return validateLogin(this)" action="test_page.html" method="post">
 				<div class="row visible-xs-block">
 					<div class="col-xs-1"></div>
 					<div class="col-xs-9">
-						<h4> Log In to Your Account </h4>
-						<br>
-						Username <br>
-						<input id="username" class="form-control input-sm" type="text" name="username" maxlength="50" required="required"/>
-						<br>
-						Password <br>
-						<input id="password" class="form-control input-sm" type="Password" name="password" maxlength="50" required="required"/>
-						<br>
+							<h4> Log In to Your Account </h4>
+							<br>
+							Username <br>
+							<input id="username-xs" class="form-control input-sm" type="text" name="username" maxlength="50" required="required" />
+							<br>
+							Password <br>
+							<input id="password-xs" class="form-control input-sm" type="Password" name="password" maxlength="50" required="required" />
+							<br>
 					</div>
 					<div class="col-xs-2"></div>
-				</div>
-				<div class="row hidden-xs">
-					<div class="col-sm-1"></div>
-					<div class="col-sm-4">
-						<h2> Log In to Your Account </h2>
-						<br>
-						Username <br>
-						<input id="username" class="form-control input-sm" type="text" name="username" required="required"/>
-						<br>
-						Password <br>
-						<input id="password" class="form-control input-sm" type="Password" name="password" required="required"/>
-						<br>
-					</div>
-					<div class="col-sm-7"></div>
 				</div>
 				<div class="row visible-xs-block">
 					<div class="col-xs-1"></div>
@@ -66,6 +52,39 @@
 					</div>
 					<div class="col-xs-2"></div>
 				</div>
+				<div class="row visible-xs-block msg">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-9">
+						Don't have an account?<br>
+						Create one <a href="login_page.html">here</a>
+					</div>
+					<div class="col-xs-2"></div>
+				</div>
+				<div class="row visible-xs msg" id="lgn_err_xs" hidden="false">
+					<div class="col-xs-1"></div>
+					<div class="text-danger col-xs-9">
+						Forget your username or password?<br>
+						Find them <a href="/">here</a>
+					</div>
+					<div class="col-xs-2"></div>
+				</div>
+		</form>
+		<form onsubmit="return validateLogin(this)" action="test_page.html" method="post">	
+				<div class="row hidden-xs">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-4">
+						<h2> Log In to Your Account </h2>
+						<br>
+						Username <br>
+						<input id="username-lg" class="form-control input-sm" type="text" name="username" required="required" />
+						<br>
+						Password <br>
+						<input id="password-lg" class="form-control input-sm" type="Password" name="password" required="required" />
+						<br>
+					</div>
+					<div class="col-sm-7"></div>
+				</div>
+
 				<div class="row hidden-xs">
 					<div class="col-sm-5"></div>
 					<div class="col-sm-2">
@@ -75,31 +94,17 @@
 					</div>
 					<div class="col-sm-5"></div>
 				</div>
-				<div class="row visible-xs-block msg">
-					<div class="col-xs-1"></div>
-					<div class="col-xs-9">
-						Don't have an account?<br>
-						Create one <a href="login_page.html">here</a>
-					</div>
-					<div class="col-xs-2"></div>
-				</div>
+
 				<div class="row hidden-xs msg">
 					<div class="col-sm-5"></div>
 					<div class="col-sm-3">
 						Don't have an account?<br>
-						Create one <a href="login_page.html">here</a>
+						Create one <a href="" data-toggle="modal" data-target="#create_account_modal">here</a>
 					</div>
 					<div class="col-sm-4"></div>
 				</div>
-				<div class="row visible-xs msg" id="lgn_err_xs">
-					<div class="col-xs-1"></div>
-					<div class="text-danger col-xs-9">
-						Forget your username or password?<br>
-						Find them <a href="/">here</a>
-					</div>
-					<div class="col-xs-2"></div>
-				</div>
-				<div class="row hidden-xs msg" id="lgn_err">
+
+				<div class="row hidden-xs msg" id="lgn_err" hidden>
 					<div class="col-sm-5"></div>
 					<div class="text-danger col-sm-3">
 						Forget your username or password?<br>
@@ -109,6 +114,63 @@
 				</div>
 				<br><br>
 			</form>
+		</div>
+
+
+		<!-- Modal -->
+		<div id="create_account_modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal Content-->
+				<div class="modal-content create-modal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+        				<h3 class="modal-title">Create A New Account</h3>
+					</div>
+					<form action="" onsubmit="return validateCreateAccount(this)" method="post">
+						<div class="modal-body">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-sm-2">
+										Username
+									</div>
+									<div class="col-sm-8">
+										<input type="text" name="username" required="required"/>
+									</div>
+								</div><br>
+								<div class="row">
+									<div class="col-sm-2">
+										Email
+									</div>
+									<div class="col-sm-8">
+										<input type="email" name="email" required="required"/>
+									</div>
+								</div><br>
+								<div class="row">
+									<div class="col-sm-2">
+										Password
+									</div>
+									<div class="col-sm-8">
+										<input type="password" name="password" required="required"/>
+									</div>
+								</div><br>
+								<div class="row">
+									<div class="col-sm-2">
+										Confirm Password
+									</div>
+									<div class="col-sm-8">
+										<input type="text" name="confirm-password" required="required"/>
+									</div>
+								</div><br>
+							</div>
+						</div>
+					    <div class="modal-footer">
+	        				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        				<button type="submit" class="btn cnfrm-btn">Create Account</button>
+	      			 	</div>
+      			 	</form>
+				</div>
+			</div> 
+
 		</div>
 		<footer class="container-fluid footer">
 			<div class="row visible-xs-block" id="mobile-footer">
