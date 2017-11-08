@@ -33,3 +33,15 @@ body{
 	color: #eeeeee;
 	background-color: rgb(25, 150, 125);
 }
+
+.modal-content{
+	background-color: #eeeeee;
+}
+
+.modal-footer{
+	border-top: 1px solid #bbbbbb;
+}
+
+.modal-header{
+	border-bottom: 1px solid #bbbbbb;
+}
