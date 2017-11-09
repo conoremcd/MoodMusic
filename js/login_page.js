@@ -18,7 +18,7 @@ function validateLogin(theForm) {
 		if (window.innerWidth < 760) {
 			document.getElementByID("lgn_err_xs").setAttribute("class", "row visible-xs-block msg");
 		} else {
-			document.getElementByID("lgn_err_xs").setAttribute("class", "row hidden-xs msg");
+			document.getElementByID("lgn_err").setAttribute("class", "row hidden-xs msg");
 		}
 		return false;
 	}
