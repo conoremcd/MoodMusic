@@ -15,11 +15,12 @@ function validateLogin(theForm) {
 		return true;
 	} else {
 		//prompt error message
-		if (window.innerWidth < 760) {
-			document.getElementByID("lgn_err_xs").setAttribute("class", "row visible-xs-block msg");
+		if ($(window).width() < 760) {
+			$("#lgn_err_xs").attr("class", "row visible-xs-block msg");
 		} else {
-			document.getElementByID("lgn_err").setAttribute("class", "row hidden-xs msg");
+			$("#lgn_err").attr("class", "row hidden-xs msg");
 		}
+
 		return false;
 	}
 }
@@ -38,18 +39,22 @@ function validateCreateAccount(theForm){
 
 	//need to change this eventually
 	if (username === "demo"){
-		error += "The username you have entered already exists \n";
-	}
-
-	if (password !== confirm_password) {
-		error += "The passwords you have entered do not match \n";
+		error += "The username you have entered already exists <br>";
+	}else if (password !== confirm_password) {
+		error += "The passwords you have entered do not match <br>";
 	}
 
 	if (error === ""){
 		return true;
 	}else{
-		$("#creation-error").html("<div class='col-sm-8'>" + error + "</div>");
-		$("#creation-error").removeAttr("hidden");
+
+		//prompt error message
+		if ($(window).width() < 760) {
+			$("#creation-error-xs").html("<div class='col-xs-9'>" + error + "</div>");
+		} else {
+			$("#creation-error-lg").html("<div class='col-sm-8'>" + error + "</div>");
+		}
+
 		return false;
 	}
 }
@@ -62,9 +67,13 @@ function validateRecoverAccount(theForm){
 		localStorage.setItem("email_recover", email);
 		return true;
 	} else {
-		error = "<div class='col'> The email you have entered was not found in our database. <div>";
-		$("#recover-error").html(error);
-		$("#recover-error").removeAttr("hidden");
+		error = "The email you have entered was not found in our database.";
+		//prompt error message
+		if ($(window).width() < 760) {
+			$("#recover-error-xs").html("<div class='col-xs-9'>" + error + "</div>");
+		} else {
+			$("#recover-error-lg").html("<div class='col-sm-8'>" + error + "</div>");
+		}
 		return false;
 	}
 }
