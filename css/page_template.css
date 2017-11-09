@@ -57,17 +57,7 @@ body{
 	border-top: 1px solid #bbbbbb;
 }
 
-.form-footer{
-	border-top:  1px solid #bbbbbb;
-	padding-top: 15px;
-}
-
 .modal-header{
 	border-bottom: 1px solid #bbbbbb;
 }
 
-.form-title{
-	border-bottom: 1px solid #bbbbbb;
-	font-size: 2em;
-	color: #333333 !important;
-}
