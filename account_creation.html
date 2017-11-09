@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	  <title>Account Recovery</title>
+	  <title>Create An Account</title>
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,66 +29,114 @@
 	</header>
 	<div class="container-fluid"><br>
 		<!-- Desktop -->
-		<form action="account_recovery_confirmation.html" onsubmit="return validateRecoverAccount(this)" method="post">
+		<form action="account_creation_confirmation.html" onsubmit="return validateCreateAccount(this)" method="post">
 			<div class="row form-title hidden-xs">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-9">
-					<strong>Recover Your Account</strong>
+					<strong>Create An Account</strong>
 				</div>
 			</div><br><br>
 			<div class="row hidden-xs">
 				<div class="col-sm-1"></div>
-				<div class="col-sm-6">
-					Please enter your email address below. We will send you an email containing your login information shortly. 
+				<div class="col-sm-2">
+					Username:
 				</div>
-			</div><br>
-			<div class="row hidden-xs">
-				<div class="col-sm-1"></div>
 				<div class="col-sm-3">
-					<input type="email" name="email" required="required" class="form-control input-sm" placeholder="Your Email Address" />
+					<input type="text" name="username" required="required" class="form-control input-sm"/>
 				</div>
 			</div><br>
 			<div class="row hidden-xs">
 				<div class="col-sm-1"></div>
-				<div id="recover-error-lg" class="row text-danger"></div>
+				<div class="col-sm-2">
+					Email:
+				</div>
+				<div class="col-sm-3">
+					<input type="email" name="email" required="required" class="form-control input-sm"/>
+				</div>
+			</div><br>
+			<div class="row hidden-xs">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-2">
+					Password:
+				</div>
+				<div class="col-sm-3">
+					<input type="password" name="password" required="required" class="form-control input-sm"/>
+				</div>
+			</div><br>
+			<div class="row hidden-xs">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-2">
+					Confirm Password:
+				</div>
+				<div class="col-sm-3">
+					<input type="password" name="confirm_password" required="required" class="form-control input-sm" />
+				</div>
+			</div><br><br>
+			<div class="row hidden-xs">
+				<div class="col-sm-1"></div>
+				<div id="creation-error-lg" class="row text-danger"></div>
 			</div>
 		    <div class="form-footer hidden-xs">
 		    	<div class="col-sm-5"></div>
 		    	<div class="col-sm-4">
 		    		<button type="button" class="btn btn-default" onclick="location.href='login_page.html'">Cancel</button>
-					<button type="submit" class="btn cnfrm-btn">Send An Email</button>
+					<button type="submit" class="btn cnfrm-btn">Create Account</button>
 		    	</div>
 		 	</div>
 	 	</form>
 	 	<!-- Mobile -->
-		<form action="account_recovery_confirmation.html" onsubmit="return validateRecoverAccount(this)" method="post">
+		<form action="account_creation_confirmation.html" onsubmit="return validateCreateAccount(this)" method="post">
 			<div class="row form-title visible-xs-block">
 				<div class="col-xs-1"></div>
 				<div class="col-xs-9">
-					<strong>Recover Your Account</strong>
+					<strong>Create An Account</strong>
 				</div>
 			</div><br><br>
 			<div class="row visible-xs-block">
 				<div class="col-xs-1"></div>
-				<div class="col-xs-9">
-					Please enter your email address below. We will send you an email containing your login information shortly. 
+				<div class="col-xs-3">
+					Username:
 				</div>
-			</div><br>
-			<div class="row visible-xs-block">
-				<div class="col-xs-1"></div>
 				<div class="col-xs-6">
-					<input type="email" name="email" required="required" class="form-control input-sm" placeholder="Your Email Address" />
+					<input type="text" name="username" required="required" class="form-control input-sm"/>
 				</div>
 			</div><br>
 			<div class="row visible-xs-block">
 				<div class="col-xs-1"></div>
-				<div id="recover-error-xs" class="row text-danger"></div>
+				<div class="col-xs-3">
+					Email:
+				</div>
+				<div class="col-xs-6">
+					<input type="email" name="email" required="required" class="form-control input-sm"/>
+				</div>
+			</div><br>
+			<div class="row visible-xs-block">
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3">
+					Password:
+				</div>
+				<div class="col-xs-6">
+					<input type="password" name="password" required="required" class="form-control input-sm"/>
+				</div>
+			</div><br>
+			<div class="row visible-xs-block">
+				<div class="col-xs-1"></div>
+				<div class="col-xs-3">
+					Confirm Password:
+				</div>
+				<div class="col-xs-6">
+					<input type="password" name="confirm_password" required="required" class="form-control input-sm" />
+				</div>
+			</div><br><br>
+			<div class="row visible-xs-block">
+				<div class="col-xs-1"></div>
+				<div id="creation-error-xs" class="row text-danger"></div>
 			</div>
 		    <div class="form-footer visible-xs-block">
 		    	<div class="col-xs-1"></div>
 		    	<div class="col-xs-9">
 		    		<button type="button" class="btn btn-default btn-sm btn-block" onclick="location.href='login_page.html'">Cancel</button>
-					<button type="submit" class="cnfrm-btn btn btn-lg btn-block">Send An Email</button>
+					<button type="submit" class="cnfrm-btn btn btn-lg btn-block">Create Account</button>
 		    	</div>
 		 	</div>
 	 	</form>
