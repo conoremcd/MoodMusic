@@ -9,11 +9,11 @@ body{
 	min-height: 100%;
 }
 
-h1, h2, h3, h4{
+.lt_h{
 	color: #eeeeee;
 }
 
-h5, h6{
+.drk_h{
 	color: #111111;
 }
 
