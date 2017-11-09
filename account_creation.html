@@ -30,59 +30,32 @@
 	<div class="container-fluid"><br>
 		<!-- Desktop -->
 		<form action="account_creation_confirmation.html" onsubmit="return validateCreateAccount(this)" method="post">
-			<div class="row form-title hidden-xs">
-				<div class="col-sm-1"></div>
-				<div class="col-sm-9">
-					<strong>Create An Account</strong>
-				</div>
-			</div><br><br>
 			<div class="row hidden-xs">
 				<div class="col-sm-1"></div>
-				<div class="col-sm-2">
-					Username:
+				<div class="col-sm-4">
+					<h2>Create An Account</h2>
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" name="email" class="form-control input-sm" id="email" required="required">
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label>
+						<input type="password" name="password" class="form-control input-sm" id="pwd" required="required">
+					</div>
+					<div class="form-group">
+						<label for="confirm_pwd">Password:</label>
+						<input type="password" name="confirm_password" class="form-control input-sm" id="confirm_pwd" required="required">
+					</div>
 				</div>
-				<div class="col-sm-3">
-					<input type="text" name="username" required="required" class="form-control input-sm"/>
-				</div>
-			</div><br>
-			<div class="row hidden-xs">
-				<div class="col-sm-1"></div>
-				<div class="col-sm-2">
-					Email:
-				</div>
-				<div class="col-sm-3">
-					<input type="email" name="email" required="required" class="form-control input-sm"/>
-				</div>
-			</div><br>
-			<div class="row hidden-xs">
-				<div class="col-sm-1"></div>
-				<div class="col-sm-2">
-					Password:
-				</div>
-				<div class="col-sm-3">
-					<input type="password" name="password" required="required" class="form-control input-sm"/>
-				</div>
-			</div><br>
-			<div class="row hidden-xs">
-				<div class="col-sm-1"></div>
-				<div class="col-sm-2">
-					Confirm Password:
-				</div>
-				<div class="col-sm-3">
-					<input type="password" name="confirm_password" required="required" class="form-control input-sm" />
-				</div>
-			</div><br><br>
-			<div class="row hidden-xs">
-				<div class="col-sm-1"></div>
-				<div id="creation-error-lg" class="row text-danger"></div>
+				<div class="col-sm-7"></div>
 			</div>
-		    <div class="form-footer hidden-xs">
-		    	<div class="col-sm-5"></div>
-		    	<div class="col-sm-4">
-		    		<button type="button" class="btn btn-default" onclick="location.href='login_page.html'">Cancel</button>
-					<button type="submit" class="btn cnfrm-btn">Create Account</button>
-		    	</div>
-		 	</div>
+			<div class="row hidden-xs">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-11">
+				<div id="creation-error-lg" class="msg text-danger"></div>
+			</div>
+			<button type="button" class="btn btn-default" onclick="location.href='login_page.html'">Cancel</button>
+			<button type="submit" class="btn cnfrm-btn">Create Account</button>
 	 	</form>
 	 	<!-- Mobile -->
 		<form action="account_creation_confirmation.html" onsubmit="return validateCreateAccount(this)" method="post">
