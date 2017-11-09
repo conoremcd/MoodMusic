@@ -15,8 +15,11 @@ function validateLogin(theForm) {
 		return true;
 	} else {
 		//prompt error message
-		$("#lgn_err").removeAttr("hidden");
-		$("#lgn_err_xs").removeAttr("hidden");
+		if ($(window).width < 760) {
+			$("#lgn_err_xs").setAttribute("class", "row visible-xs-block msg");
+		} else {
+			$("#lgn_err").setAttribute("class", "row hidden-xs msg");
+		}
 		return false;
 	}
 }
