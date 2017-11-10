@@ -48,6 +48,13 @@ body{
 	background-color: rgb(25, 150, 125);
 }
 
+.sd_br{
+	background-color: #444444;
+}
+
+.cntrl_pnl{
+	background-color: #111111;
+}
 
 .modal-content{
 	background-color: #eeeeee;
@@ -60,4 +67,3 @@ body{
 .modal-header{
 	border-bottom: 1px solid #bbbbbb;
 }
-
