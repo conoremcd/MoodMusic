@@ -1,119 +1,115 @@
 <!DOCTYPE html>
 <html>
-<head>
-	  <title>Create An Account</title>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <link rel="stylesheet" href="css/page_template.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script type="text/javascript" src="js/login_page.js"></script>
-</head>
-<body>
-	<header class="container-fluid header">
-		<div class="row visible-xs-block" id="mobile-header">
-			<div class="col-xs-1"></div>
-			<div class="col-xs-2">
-				<a href="login_page.html"><img src="images/logo_placeholder.png" width="40" height="40" alt=""></a>
+	<head>
+		<title>Create An Account</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/page_template.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/login_page.js"></script>
+	</head>
+	<body>
+		<header class="container-fluid header">
+			<div class="row visible-xs-block" id="mobile-header">
+				<div class="col-xs-1"></div>
+				<div class="col-xs-2">
+					<a href="login_page.html"><img src="images/logo_placeholder.png" width="40" height="40" alt=""></a>
+				</div>
+				<div class="col-xs-9"></div>
 			</div>
-			<div class="col-xs-9"></div>
-		</div>
-		<div class="row hidden-xs" id="dsktop-header">
-			<div class="col-sm-1"></div>
-			<div class="col-sm-2">
-				<a href="login_page.html"><img src="images/logo_placeholder.png" width="40" height="40" alt=""></a>
-			</div>
-			<div class="col-sm-9"></div>
-		</div>
-	</header>
-	<div class="container-fluid"><br>
-		<!-- Desktop -->
-		<form action="account_creation_confirmation.html" onsubmit="return validateCreateAccount(this)" method="post">
-			<div class="row hidden-xs">
+			<div class="row hidden-xs" id="dsktop-header">
 				<div class="col-sm-1"></div>
-				<div class="col-sm-4">
-					<h2>Create An Account</h2>
-					<div class="form-group">
-						<label for="email">Email:</label>
-						<input type="email" name="email" class="form-control input-sm" id="email" required="required">
-					</div>
-					<div class="form-group">
-						<label for="pwd">Password:</label>
-						<input type="password" name="password" class="form-control input-sm" id="pwd" required="required">
-					</div>
-					<div class="form-group">
-						<label for="confirm_pwd">Password:</label>
-						<input type="password" name="confirm_password" class="form-control input-sm" id="confirm_pwd" required="required">
-					</div>
+				<div class="col-sm-2">
+					<a href="login_page.html"><img src="images/logo_placeholder.png" width="40" height="40" alt=""></a>
 				</div>
-				<div class="col-sm-7"></div>
+				<div class="col-sm-9"></div>
 			</div>
-			<div class="row hidden-xs">
-				<div class="col-sm-1"></div>
-				<div class="col-sm-11">
-				<div id="creation-error-lg" class="msg text-danger"></div>
-			</div>
-			<button type="button" class="btn btn-default" onclick="location.href='login_page.html'">Cancel</button>
-			<button type="submit" class="btn cnfrm-btn">Create Account</button>
-	 	</form>
-	 	<!-- Mobile -->
-		<form action="account_creation_confirmation.html" onsubmit="return validateCreateAccount(this)" method="post">
-			<div class="row form-title visible-xs-block">
-				<div class="col-xs-1"></div>
-				<div class="col-xs-9">
-					<strong>Create An Account</strong>
+		</header>
+		<div class="container-fluid"><br>
+			<!-- Mobile -->
+			<form action="account_creation_confirmation.html" onsubmit="return validateCreateAccount(this)" method="post">
+				<div class="row form-title visible-xs-block">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-9">
+						<h4>Create An Account</h4>
+						<div class="form-group">
+							<label for="usrname">Username:</label>
+							<input type="text" name="username" class="form-control input-sm" id="usrname" required="required">
+						</div>
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input type="email" name="email" class="form-control input-sm" id="email" required="required">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Password:</label>
+							<input type="password" name="password" class="form-control input-sm" id="pwd" required="required">
+						</div>
+						<div class="form-group">
+							<label for="confirm_pwd">Confirm Password:</label>
+							<input type="password" name="confirm_password" class="form-control input-sm" id="confirm_pwd" required="required">
+						</div>
+					</div>
 				</div>
-			</div><br><br>
-			<div class="row visible-xs-block">
-				<div class="col-xs-1"></div>
-				<div class="col-xs-3">
-					Username:
+			
+				<div class="row visible-xs-block">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-5">
+						<div id="creation-error-xs" class="text-danger"></div>
+					</div>
+					<div class="col-xs-6"></div>
 				</div>
-				<div class="col-xs-6">
-					<input type="text" name="username" required="required" class="form-control input-sm"/>
+				<div class="visible-xs-block">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-9">
+						<button type="button" class="btn btn-default btn-sm btn-block" onclick="location.href='login_page.html'">Cancel</button>
+						<button type="submit" class="cnfrm-btn btn btn-lg btn-block">Create Account</button>
+					</div>
+					<div class="col-xs-2"></div>
 				</div>
-			</div><br>
-			<div class="row visible-xs-block">
-				<div class="col-xs-1"></div>
-				<div class="col-xs-3">
-					Email:
-				</div>
-				<div class="col-xs-6">
-					<input type="email" name="email" required="required" class="form-control input-sm"/>
-				</div>
-			</div><br>
-			<div class="row visible-xs-block">
-				<div class="col-xs-1"></div>
-				<div class="col-xs-3">
-					Password:
-				</div>
-				<div class="col-xs-6">
-					<input type="password" name="password" required="required" class="form-control input-sm"/>
-				</div>
-			</div><br>
-			<div class="row visible-xs-block">
-				<div class="col-xs-1"></div>
-				<div class="col-xs-3">
-					Confirm Password:
-				</div>
-				<div class="col-xs-6">
-					<input type="password" name="confirm_password" required="required" class="form-control input-sm" />
-				</div>
-			</div><br><br>
-			<div class="row visible-xs-block">
-				<div class="col-xs-1"></div>
-				<div id="creation-error-xs" class="row text-danger"></div>
-			</div>
-		    <div class="form-footer visible-xs-block">
-		    	<div class="col-xs-1"></div>
-		    	<div class="col-xs-9">
-		    		<button type="button" class="btn btn-default btn-sm btn-block" onclick="location.href='login_page.html'">Cancel</button>
-					<button type="submit" class="cnfrm-btn btn btn-lg btn-block">Create Account</button>
-		    	</div>
-		 	</div>
-	 	</form>
+			</form>
 
-	</div>
-</body>
+			<!-- Desktop -->
+			<form action="account_creation_confirmation.html" onsubmit="return validateCreateAccount(this)" method="post">
+				<div class="row hidden-xs">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-4">
+						<h2>Create An Account</h2>
+						<div class="form-group">
+							<label for="usrname">Username:</label>
+							<input type="text" name="username" class="form-control input-sm" id="usrname" required="required">
+						</div>
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input type="email" name="email" class="form-control input-sm" id="email" required="required">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Password:</label>
+							<input type="password" name="password" class="form-control input-sm" id="pwd" required="required">
+						</div>
+						<div class="form-group">
+							<label for="confirm_pwd">Confirm Password:</label>
+							<input type="password" name="confirm_password" class="form-control input-sm" id="confirm_pwd" required="required">
+						</div>
+					</div>
+					<div class="col-sm-7"></div>
+				</div>
+				<div class="row hidden-xs">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-11">
+						<div id="creation-error-lg" class="msg text-danger"></div>
+					</div>
+				</div>
+				<div class="row hidden-xs">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-4">
+						<button type="button" class="btn btn-default" onclick="location.href='login_page.html'">Cancel</button>
+						<button type="submit" class="btn cnfrm-btn">Create Account</button>
+					</div>
+					<div class="col-sm-7"></div>
+				</div>
+			</form>
+		</div>
+	</body>
 </html>
