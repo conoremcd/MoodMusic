@@ -6,6 +6,7 @@ function audioPlayer() {
         event.preventDefault();
         $("#audioPlayer")[0].src = this;
         $("#audioPlayer")[0].play();
+        $("scrolling")[0].set
         $("#playlist li").removeClass("current-song");
         currentSong = $(this).parent().index();
         $(this).parent().addClass("current-song");
