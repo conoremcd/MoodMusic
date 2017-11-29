@@ -48,12 +48,12 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h6 class="top-brdr">SELECT COLOR</h6>
+							<h6 class="top-brdr"><a href="colorRequestor.php">SELECT COLOR</a></h6>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-9 col-md-7">
-							<form action="music_player.html" onsubmit="return getColor(this)" method="post">
+							<form action="colorRequestor.php" onsubmit="return getColor(this)" method="post">
 								<button id="ch_color" class="ch-clr-btn btn btn-sm btn-block bmprbx btm-bmpr"  type="submit">
 									<img src="images/logo_placeholder.png" width="40" height="40" alt="">
 								</button>
@@ -63,7 +63,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h6 class="top-brdr">SELECT MOOD</h6>
+							<h6 class="top-brdr"><a href="requestor.php">SELECT MOOD</a></h6>
 						</div>
 					</div>
 					<div class="row">
@@ -161,21 +161,46 @@
 		</footer>
 	</body>
     <?php
+	
+	$mood = "happy";
+	$color = "";
+	
+	if (isset($_POST['colorPref'])) {
+		$color = $_POST['colorPref'];
+		$mood=null;
+	}
+	
+	if (isset($_POST['moodPref'])) {
+			$mood = $_POST['moodPref'];
+			$color=null;
+	}
+	
     echo "<audio src='' controls id='audioPlayer' style='display: none'></audio>";
     $file = "audio_player/DefaultPlaylist.txt";
     $file = fopen($file, "r") or die("Unable to open file!");
     echo '<ul id="playlist">';
     $start = 1;
+		
     while(!feof($file)) {
+				
+		
         $line = fgets($file);
         if($line === false) break;
         $array = explode("||", $line);
-        if ($start === 1) {
-            echo "<li class='current-song' style='display: none'><a href=$array[2]>$array[1]" . " - " . "$array[0]</a></li>";
-            $start = 0;
-        }else {
-            echo "<li style='display: none'><a href=$array[2]>$array[1]" . " - " . "$array[0]</a></li>";
-        }
+        
+		//echo "<pre>".$array[3]."/n"."</pre>";
+		
+		if ( ( ( ( $mood != null ) && strpos($array[3], $mood) ) || (strpos($array[4], $color)) ) || ($mood==null
+																										&& $color==null)) {
+		
+			if ($start === 1) {
+				echo "<li class='current-song' style='display: none'><a href=$array[2]>$array[1]" . " - " . "$array[0]</a></li>";
+				$start = 0;
+			}else {
+				echo "<li style='display: none'><a href=$array[2]>$array[1]" . " - " . "$array[0]</a></li>";
+			}
+		
+		} 
     }
     echo '</ul>';
     ?>
