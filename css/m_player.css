@@ -1,0 +1,89 @@
+.title-pnl{
+	padding-top: .25em;
+	height:  15%;
+	max-height: 60px;
+
+	background-color: #333333;
+}
+
+.sd-br{
+	background-color: #cccccc;
+	min-height: 100%;
+}
+.center-pnl{
+	height: 85%;
+}
+
+.control-pnl{
+	height: 15%;
+	padding: 10px;
+}
+
+.edit-pnl{
+	background-color: #dddddd;
+}
+
+.player-pnl{
+	height: 45%
+}
+
+.progress-pnl{
+	height: 15%;
+}
+
+.player-title{
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+.player-img{
+	background-color: #dddddd;
+	text-align: center;
+	height: 98%;
+	width: 65%;
+}
+
+.audio-btn-group{
+	text-align: center;
+}
+
+.audio-btn{
+	padding: 5px;
+	border-radius: 50%;
+	border-color: transparent;
+	width: 3em;
+	height: 3em;
+	vertical-align: middle;
+}
+
+.edit-btn{
+	padding: 5px;
+	border-radius: 50%;
+	border-color: transparent;
+	width: 3em;
+	height: 3em;
+	vertical-align: middle;
+}
+
+.clr-btn{
+	max-width: 75px;
+}
+
+#song-title{
+	font:  14pt #333333; 
+}
+
+#album-title{
+	font:  12pt #888888; 
+}
+
+#play{
+	min-width: 4em;
+	min-height: 4em;
+}
+
+#pause{
+	min-width: 4em;
+	min-height: 4em;
+}
