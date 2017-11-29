@@ -7,28 +7,78 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	  <link rel="stylesheet" href="css/page_template.css"
+	  <link rel="stylesheet" href="css/page_template.css">
+	  <link rel="stylesheet" href="css/m_player.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script type="text/javascript" src="js/login.js"></script>
-      <script type="text/javascript" src="js/audioPlayer.js"></script>
+	  <script type="text/javascript" src="js/audioPlayer.js"></script>
       <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 	</head>
 	<body>
 		<!-- Mobile Elements -->
-		<div class="container-fluid visible-xs-block">
-			<div class="row">
-				<div id="viewer" class="col-sm-12">
-					
+		<div class="container-fluid visible-xs-block pnl">
+			<div class="row title-pnl">
+				<div class="col-xs-1"></div>
+				<div class="col-xs-10">
+					<div class="player-title">
+						<h6 id="song-title" class="lt-h">Song Title</h6>
+						<h6 id="album-title" class="gr-h">Album Title</h6>
+					</div>
+				</div>
+				<div class="col-xs-1"></div>
+			</div>
+			<div class="row player-pnl lt-pnl">
+				<div class="col-xs-12 bmprbx pnl">
+					<div class="player-img horizontal-align">
+						<!-- album art image here -->
+						
+					</div>
 				</div>
 			</div>
-			<div class="row cntrl-pnl">
-				<div id="control_panel" class="col-sm-12">
-					
+			<div class="row info-pnl">
+				<div class="col-xs12 bmprbx">
+					<span class="horizontal-align">progress bar</span>
 				</div>
 			</div>
-		</div>
-	
+			<div class="row control-pnl vertical-align">
+				<div class="col-xs-12">
+					<div class="audio-btn-group">
+						<button id="previous" class="audio-btn lt-btn">
+							<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_previous</i>
+						</button>
+						<button id="play" class="audio-btn lt-btn">
+							<i class="material-icons" style="font-size: 36px; vertical-align: middle;">play_arrow</i>
+						</button>
+						<button id="pause" class="audio-btn drk-btn" hidden="hidden">
+							<i class="material-icons" style="font-size: 36px; vertical-align: middle;">pause</i>
+						</button>
+						<button id="next" class="audio-btn lt-btn">
+							<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_next</i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="row edit-pnl">
+				<div class="col-xs-3 bmprbx">
+					<form action="colorRequestor.php" onsubmit="return getColor(this)" method="post">
+						<button id="ch_color" class="clr-btn edit-btn lt-btn"  type="submit">
+							<img src="images/change-color.svg" alt="hi">
+						</button>
+					</form>
+				</div>
+				<div class="col-xs-3"></div>
+				<div class="col-xs-3 bmprbx">
+					<button class="edit-btn lt-btn horizontal-align">
+						<i class="material-icons" style="font-size: 20px; vertical-align: middle;">add</i>
+					</button>
+				</div>
+				<div class="col-xs-3 bmprbx">
+					<button class="edit-btn lt-btn horizontal-align">
+						<i class="material-icons" style="font-size: 20px; vertical-align: middle;">create</i>
+					</button>
+				</div>
+			</div>
+		</div
 			
 		<!-- Desktop Elements -->
 		<div class="container-fluid hidden-xs pnl">
@@ -48,14 +98,14 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h6 class="top-brdr"><a href="colorRequestor.php">SELECT COLOR</a></h6>
+							<h6 class="top-brdr">SELECT COLOR</h6>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-9 col-md-7">
 							<form action="colorRequestor.php" onsubmit="return getColor(this)" method="post">
-								<button id="ch_color" class="ch-clr-btn btn btn-sm btn-block bmprbx btm-bmpr"  type="submit">
-									<img src="images/logo_placeholder.png" width="40" height="40" alt="">
+								<button id="ch_color" class="clr-btn drk-btn btn btn-sm btn-block btm-bmpr"  type="submit">
+									<img src="images/change-color.svg" alt="">
 								</button>
 							</form>
 						</div>
@@ -63,7 +113,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<h6 class="top-brdr"><a href="requestor.php">SELECT MOOD</a></h6>
+							<h6 class="top-brdr">SELECT MOOD</h6>
 						</div>
 					</div>
 					<div class="row">
@@ -112,30 +162,31 @@
 					</div>
 					
 					<!-- Desktop Audio Control Panel -->
-					<div class="row vertical-align control-pnl">
+					<div class="row drk-pnl control-pnl vertical-align">
 						<div class="col-sm-3">
-							<button class="pnl-btn btn btn-sm vertical-align">
-								<i class="material-icons" style="font-size: 30px; text-align: center;">add</i>
+							<button class="edit-btn gr-btn horizontal-align">
+								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">add</i>
 							</button>
 						</div>
-						<div class="col-sm-2">
-							<button class="pnl-btn btn btn-sm vertical-align" style="float: right;">
-								<i id="previous" class="material-icons" style="font-size: 48px; text-align: center;">skip_previous</i>
-							</button>
-						</div>
-						<div class="col-sm-2">	
-							<button class="pnl-btn btn btn-sm vertical-align">
-								<i id="play" class="material-icons" style="font-size: 62px; text-align: center;">play_arrow</i>
-							</button>
-						</div>
-						<div class="col-sm-2">
-							<button class="pnl-btn btn btn-sm vertical-align" style="float: left;">
-								<i id="next" class="material-icons" style="font-size: 48px; text-align: center;">skip_next</i>
-							</button>
+						<div class="col-sm-6">
+							<div class="audio-btn-group">
+								<button id="previous" class="audio-btn gr-btn">
+									<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_previous</i>
+								</button>
+								<button id="play" class="audio-btn gr-btn">
+									<i class="material-icons" style="font-size: 36px; vertical-align: middle;">play_arrow</i>
+								</button>
+								<button id="pause" class="audio-btn lt-btn" hidden="hidden">
+									<i class="material-icons" style="font-size: 36px; vertical-align: middle;">pause</i>
+								</button>
+								<button id="next" class="audio-btn gr-btn">
+									<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_next</i>
+								</button>
+							</div>
 						</div>
 						<div class="col-sm-3">
-							<button class="pnl-btn btn btn-sm vertical-align">
-								<i class="material-icons" style="font-size: 30px; text-align: center;">create</i>
+							<button class="edit-btn gr-btn horizontal-align">
+								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">create</i>
 							</button>
 						</div>
 					</div>
@@ -144,23 +195,23 @@
 		</div>
 		<footer class="container-fluid footer">
 			<div class="row visible-xs-block" id="mobile-footer">
-					<div class="col-xs-1"></div>
-					<div class="col-xs-10">
-						Copyright &copy; 2017 All Rights Reserved
-					</div>
-					<div class="col-xs-1"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-9">
+					Copyright &copy; 2017 All Rights Reserved
 				</div>
-				<div class="row hidden-xs" id="dsktop-footer">
-					<div class="col-sm-1"></div>
-					<div class="col-sm-10">
-						Copyright &copy; 2017 All Rights Reserved
-					</div>
-					<div class="col-sm-1"></div>
+				<div class="col-xs-2"></div>
+			</div>
+			<div class="row hidden-xs" id="dsktop-footer">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-10">
+					Copyright &copy; 2017 All Rights Reserved
 				</div>
+				<div class="col-sm-1"></div>
 			</div>
 		</footer>
 	</body>
-    <?php
+	
+	<?php
 	
 	$mood = "happy";
 	$color = "";
@@ -205,6 +256,6 @@
     echo '</ul>';
     ?>
     <script>
-        audioPlayer();
+       audioPlayer();
     </script>
 </html>
