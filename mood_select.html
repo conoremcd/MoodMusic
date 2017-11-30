@@ -17,20 +17,20 @@
 				<div class="row visible-xs-block" id="mbl-header">
 					<div class="col-xs-1"></div>
 					<div class="col-xs-2 logo">
-						<img src="images/logo_placeholder.png" width="40" height="40" alt="">
+						<a href=""><img src="images/logo_placeholder.png" width="40" height="40" alt=""></a>
 					</div>
 					<div class="col-xs-8">
-						<h4 class="title lt_h">How Do You Feel?</h4>
+						<h4 class="title lt-h">How Do You Feel?</h4>
 					</div>
 					<div class="col-xs-1"></div>
 				</div>
 				<div class="row hidden-xs" id="dsktop-header">
 					<div class="col-sm-1"></div>
 					<div class="col-sm-2 logo">
-						<img src="images/logo_placeholder.png" width="40" height="40" alt="">
+						<a href=""><img src="images/logo_placeholder.png" width="40" height="40" alt=""></a>
 					</div>
 					<div class="col-sm-8">
-						<h4 class="title lt_h">How Do You Feel?</h4>
+						<h4 class="title lt-h">How Do You Feel?</h4>
 					</div>
 					<div class="col-sm-1"></div>
 				</div>
@@ -65,30 +65,85 @@
 			
 		<!-- Desktop Elements -->		
 		<div class="container-fluid">
-			<form action="music_player.html" onsubmit="return getMood(this)" method="post">
+			<br><br>
 				<div class="row hidden-xs">
 					<div class="col-sm-1"></div>
 					<div class="col-sm-5">
-						<div class="form-group bmprbx">
-							<input type="search" name="moodSearch" class="form-control input-sm" id="mdsearch" required="required">
-							<div class="bmprbx">
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>Mood</th>
-											</tr>
-										</thead>
-										<tbody></tbody>	
-									</table>
+						<ul class="nav nav-tabs">
+					    <li class="active"><a data-toggle="tab" href="#mood">Select By Mood</a></li>
+					    <li><a data-toggle="tab" href="#color">Select By Color</a></li>
+					  	</ul>
+					  	<div class="tab-content">
+						    <div id="mood" class="tab-pane fade in active">
+				      			<form action="m_player.php" method="post">        
+									<section class="boxed">
+											<p>
+												<h3>How are you today?</h3><br>
+													Happy <input type="radio" name="moodPref" value="happy" checked="checked" />&nbsp;
+													Sad <input type="radio" name="moodPref" value="sad" />&nbsp;
+													Relaxed <input type="radio" name="moodPref" value="relaxed" />&nbsp;
+													Angry <input type="radio" name="moodPref" value="angry" />&nbsp;
+											</p>
+									</section><br><br>
+							        <div class="col-sm-8"></div>
+										<div class="col-xs-12 col-sm-3">
+											<button class="cnfrm-btn btn btn-md btn-block" type="submit">
+												Load Playlist
+											</button>
+										</div>
+										<div class="col-sm-1"></div>							
+								</form>
+						    </div>
+						    <div id="color" class="tab-pane fade">
+					  			<div class="row">
+									<div class="col-xs-12 col-sm-12">
+										<h5 class="drk-h">Select a color that matches your mood and click Load Playlist</h5>
+									</div>
 								</div>
-							</div>
-						</div>
+								<div class="row bmprbx">
+									<div class="col-sm-3"></div>
+									<div class="col-xs-4 col-sm-2 horizontal-align">
+										<button class="btn clr-slct-btn rd" name="colorPref" value="red"></button>
+									</div>
+									<div class="col-xs-4 col-sm-2 horizontal-align">
+										<button class="btn clr-slct-btn orng" name="colorPref" value="orange"></button>
+									</div>
+									<div class="col-xs-4 col-sm-2 horizontal-align">
+										<button class="btn clr-slct-btn yllw" name="colorPref" value="yellow"></button>
+									</div>
+									<div class="col-sm-3"></div>
+								</div>
+								<div class="row bmprbx">						
+									<div class="col-sm-3"></div>
+									<div class="col-xs-4 col-sm-2 horizontal-align">
+										<button class="btn clr-slct-btn grn" name="colorPref" value="green"></button>
+									</div>
+									<div class="col-xs-4 col-sm-2 horizontal-align">
+										<button class="btn clr-slct-btn blu" name="colorPref" value="blue"></button>
+									</div>
+									<div class="col-xs-4 col-sm-2 horizontal-align">
+										<button class="btn clr-slct-btn prpl" name="colorPref" value="purple"></button>
+									</div>
+									<div class="col-sm-3"></div>
+								</div><br>
+								<form action="m_player.php" method="post">
+									<div class="row pnl">
+										<div class="col-sm-8"></div>
+										<div class="col-xs-12 col-sm-3">
+											<button class="cnfrm-btn btn btn-md btn-block" type="submit">
+												Load Playlist
+											</button>
+										</div>
+										<div class="col-sm-1"></div>
+									</div>
+								</form>
+						    </div>
+					  	</div>
 					</div>
 					<div class="col-sm-6"></div>
 				</div>
 				
-			</form>
+			
 		</div>
 		<footer class="container-fluid footer">
 			<div class="row visible-xs-block" id="mobile-footer">
