@@ -32,39 +32,39 @@
 			<div class="row bmprbx">
 				<div class="col-sm-3"></div>
 				<div class="col-xs-12 col-sm-9">
-					<h5 class="drk-h">Select a color that matches your mood and click Load Playlist</h5>
+					<h5 class="drk-h">Select a color that matches your mood and click Load Playlist!</h5>
 				</div>
 			</div>
 			
 			<form action="m_player.php" method="post">
 			
-			<div class="row bmprbx">
-				<div class="col-sm-3"></div>
-				<div class="col-xs-4 col-sm-2 horizontal-align">
-					<button class="clr-slct-btn rd" name="colorPref" value="red"></button>
+				<div class="row bmprbx">
+					<div class="col-sm-3"></div>
+					<div class="col-xs-4 col-sm-2 horizontal-align">
+						<button class="clr-slct-btn rd" name="colorPref" value="red"></button>
+					</div>
+					<div class="col-xs-4 col-sm-2 horizontal-align">
+						<button class="clr-slct-btn orng" name="colorPref" value="orange"></button>
+					</div>
+					<div class="col-xs-4 col-sm-2 horizontal-align">
+						<button class="clr-slct-btn yllw" name="colorPref" value="yellow"></button>
+					</div>
+					<div class="col-sm-3"></div>
 				</div>
-				<div class="col-xs-4 col-sm-2 horizontal-align">
-					<button class="clr-slct-btn orng" name="colorPref" value="orange"></button>
+				<div class="row bmprbx">						
+					<div class="col-sm-3"></div>
+					<div class="col-xs-4 col-sm-2 horizontal-align">
+						<button class="clr-slct-btn grn" name="colorPref" value="green"></button>
+					</div>
+					<div class="col-xs-4 col-sm-2 horizontal-align">
+						<button class="clr-slct-btn blu" name="colorPref" value="blue"></button>
+					</div>
+					<div class="col-xs-4 col-sm-2 horizontal-align">
+						<button class="clr-slct-btn prpl" name="colorPref" value="purple"></button>
+					</div>
+					<div class="col-sm-3"></div>
 				</div>
-				<div class="col-xs-4 col-sm-2 horizontal-align">
-					<button class="clr-slct-btn yllw" name="colorPref" value="yellow"></button>
-				</div>
-				<div class="col-sm-3"></div>
-			</div>
-			<div class="row bmprbx">						
-				<div class="col-sm-3"></div>
-				<div class="col-xs-4 col-sm-2 horizontal-align">
-					<button class="clr-slct-btn grn" name="colorPref" value="green"></button>
-				</div>
-				<div class="col-xs-4 col-sm-2 horizontal-align">
-					<button class="clr-slct-btn blu" name="colorPref" value="blue"></button>
-				</div>
-				<div class="col-xs-4 col-sm-2 horizontal-align">
-					<button class="clr-slct-btn prpl" name="colorPref" value="purple"></button>
-				</div>
-				<div class="col-sm-3"></div>
-			</div>
-			
+				
 				<div class="row pnl">
 					<div class="col-sm-9"></div>
 					<div class="col-xs-12 col-sm-2">
