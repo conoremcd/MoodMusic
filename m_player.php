@@ -86,7 +86,7 @@
 				<div class="sd-br col-sm-2">
 					<div class="row">
 						<div class="col-sm-5 bmprbx">
-							<a href="mood_select.html"><img src="images/logo_placeholder.png" width="60" height="60" alt=""></a>
+							<a href="mood_select.html"><img src="images/logo.svg" width="60" height="60" alt=""></a>
 						</div>
 						<div class="col-sm-7"></div>
 					</div>
