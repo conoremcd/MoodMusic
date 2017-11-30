@@ -60,13 +60,19 @@
 			</div>
 			<div class="row edit-pnl">
 				<div class="col-xs-3 bmprbx">
-					<form action="colorRequestor.php" onsubmit="return getColor(this)" method="post">
-						<button id="ch_color" class="clr-btn edit-btn lt-btn"  type="submit">
+					<form action="colorRequestor.php" onsubmit="getColor(this)" method="post">
+						<button id="ch_color" class="clr-btn edit-btn lt-btn horizontal-align"  type="submit">
 							<img src="images/change-color.svg" alt="hi">
 						</button>
 					</form>
 				</div>
-				<div class="col-xs-3"></div>
+				<div class="col-xs-3 bmprbx">
+					<form action="requestor.php" onsubmit="getColor(this)" method="post">
+						<button class="edit-btn lt-btn horizontal-align"  type="submit">
+							<i class="material-icons" style="font-size: 20px; vertical-align: middle;">queue_music</i>
+						</button>
+					</form>
+				</div>
 				<div class="col-xs-3 bmprbx">
 					<button class="edit-btn lt-btn horizontal-align">
 						<i class="material-icons" style="font-size: 20px; vertical-align: middle;">add</i>
