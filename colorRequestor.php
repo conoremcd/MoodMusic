@@ -35,6 +35,9 @@
 					<h5 class="drk-h">Select a color that matches your mood and click Load Playlist</h5>
 				</div>
 			</div>
+			
+			<form action="m_player.php" method="post">
+			
 			<div class="row bmprbx">
 				<div class="col-sm-3"></div>
 				<div class="col-xs-4 col-sm-2 horizontal-align">
@@ -61,7 +64,7 @@
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
-			<form action="m_player.php" method="post">
+			
 				<div class="row pnl">
 					<div class="col-sm-9"></div>
 					<div class="col-xs-12 col-sm-2">
