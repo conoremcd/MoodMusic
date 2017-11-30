@@ -13,6 +13,7 @@ body{
 
 .header{
 	padding-top: .8em;
+	padding-bottom: .4em;
 	background-color: #333333;
 	min-height: 4em;
 }
