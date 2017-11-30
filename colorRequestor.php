@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-	  <title>Color Selection</title>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	  <link rel="stylesheet" href="css/page_template.css">
-	  <link rel="stylesheet" href="css/color_select.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script type="text/javascript" src="js/audioPlayer.js"></script>
-      <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+		<title>Color Selection</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="css/page_template.css">
+		<link rel="stylesheet" href="css/color_select.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/audioPlayer.js"></script>
+		<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 	</head>
 	<body>
 		<header class="container-fluid header">
 			<div class="row" id="mobile-header">
 				<div class="col-xs-1"></div>
 				<div class="col-xs-11">
-					<div class="inline bmprbx">
+					<div class="inline">
 						<a href=""><img src="images/logo.svg" width="60" height="60" alt=""></a>
 					</div>
 					<div class="inline bmprbx">
