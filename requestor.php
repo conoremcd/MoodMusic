@@ -20,8 +20,8 @@
 			<div class="row" id="mobile-header">
 				<div class="col-xs-1"></div>
 				<div class="col-xs-11">
-					<div class="inline bmprbx">
-						<a href=""><img src="images/logo.svg" width="40" height="40" alt=""></a>
+					<div class="inline">
+						<a href=""><img src="images/logo.svg" width="60" height="60" alt=""></a>
 					</div>
 					<div class="inline bmprbx">
 						<h4 class="lt-h horizontal-align">How Do You Feel?</h4>
