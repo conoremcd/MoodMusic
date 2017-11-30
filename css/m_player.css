@@ -37,10 +37,17 @@
 	text-align: center;
 }
 
-.player-img{
+.player-img-sm{
 	background-color: #dddddd;
 	text-align: center;
 	height: 98%;
+	width: 65%;
+}
+
+.player-img-lg{
+	background-color: #dddddd;
+	text-align: center;
+	height: 70%;
 	width: 65%;
 }
 
@@ -78,12 +85,12 @@
 	font:  12pt #888888; 
 }
 
-#play{
+.play{
 	min-width: 4em;
 	min-height: 4em;
 }
 
-#pause{
+.pause{
 	min-width: 4em;
 	min-height: 4em;
 }
