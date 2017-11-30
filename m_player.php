@@ -46,10 +46,10 @@
 						<button id="previous-m" class="audio-btn lt-btn">
 							<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_previous</i>
 						</button>
-						<button id="play-m" class="play audio-btn lt-btn">
+						<button id="play-m" class="play audio-btn lt-btn" hidden="hidden">
 							<i class="material-icons" style="font-size: 36px; vertical-align: middle;">play_arrow</i>
 						</button>
-						<button id="pause-m" class="pause audio-btn drk-btn" hidden="hidden">
+						<button id="pause-m" class="pause audio-btn drk-btn" onclick="">
 							<i class="material-icons" style="font-size: 36px; vertical-align: middle;">pause</i>
 						</button>
 						<button id="next-m" class="audio-btn lt-btn">
