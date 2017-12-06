@@ -3,7 +3,7 @@
 <?php
 $servername = "localhost";
 $username = "moodmusic";
-$password = "moodpass";
+$password = "";
 
 // Create connection
 $conn = new mysqli("localhost", $username, $password);

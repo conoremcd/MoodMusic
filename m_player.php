@@ -9,7 +9,7 @@
 	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	  <link rel="stylesheet" href="css/page_template.css">
 	  <link rel="stylesheet" href="css/m_player.css">
-      <link rel="stylesheet" href="css/simpl_style.css">
+      <link rel="stylesheet" href="css/simple_style.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src="js/audioPlayer.js"></script>
@@ -117,13 +117,12 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-9 col-md-7">
-							<form action="colorRequestor.php" onsubmit="return getColor(this)" method="post">
-								<button id="ch_color" class="clr-btn drk-btn btn btn-sm btn-block btm-bmpr"  >
+<!--							<form action="colorRequestor.php" onsubmit="return getColor(this)" method="post">-->
+								<button id="ch_color" class="clr-btn drk-btn btn btn-sm btn-block btm-bmpr" onclick="colorPanelSlider()">
 									<img src="images/change-color.svg" alt="">
 								</button>
-							</form>
+<!--							</form>-->
 						</div>
-						<div class="col-sm-3 col-md-5"></div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
@@ -221,6 +220,14 @@
 				</div>
 			</div>
 		</div>
+<!--        Creates the slide bar for select color-->
+<!--        Need to change the z-index of the main sidebar so that this slide bar is just right behind it.-->
+<!--        Just needs to bigger than 1-->
+        <div id="sideNav" class="sidenav">
+            <a href="#" class="btn-close" onclick="closeNav()">&times;</a>
+        </div>
+<!---->
+        <div class="col-sm-3 col-md-5"></div>
 		<footer class="container-fluid footer">
 			<div class="row">
 				<div class="col-xs-1 col-sm-1"></div>
@@ -288,6 +295,14 @@
                 toggle = document.getElementById('editPanel').style.display = 'none';
                 document.getElementById('albumArt').style.display = 'inline-block';
             }
+       }
+
+       function colorPanelSlider(){
+           document.getElementById("sideNav").style.width = "60em";
+       }
+
+       function closeNav() {
+           document.getElementById("sideNav").style.width = "0";
        }
     </script>
 </html>

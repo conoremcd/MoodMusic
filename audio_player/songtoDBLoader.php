@@ -10,7 +10,7 @@ $conn = new mysqli("localhost", $username, $password);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 // Create database
 $sql = "CREATE DATABASE moodmusicDB";
@@ -43,11 +43,11 @@ function connectToDB($host, $user, $password, $database) {
 }
 
 $result = mysqli_query($db, $sqlQuery);
-                
+
                 if ($result) {
                     echo "Table creation success.";
-                } else if (strpos(mysqli_error($db), "already exists")) { 				   
-                    
+                } else if (strpos(mysqli_error($db), "already exists")) {
+
                 } else {
 					echo "Table creation failed.".mysqli_error($db);
 				}
@@ -60,31 +60,31 @@ $file = "DefaultPlaylist2.txt";
         echo '<ul id="playlist">';
         $start = 0;
         while(!feof($file)) {
-            
-                       
+
+
             $line = fgets($file);
             if($line === false) break;
             $array = explode("||", $line);
             //while ( $start < (sizeof($array)-1) ) {
-                
+
                 $songname = $array[$start];
                 $artist = $array[$start+1];
                 $moods = $array[$start+3];
                 $colors =$array[$start+4];
-            
-                $sqlQuery = sprintf("insert into $table (songname,artist, moods, colors) values ('%s', '%s', '%s', '%s')", 
+
+                $sqlQuery = sprintf("insert into $table (songname,artist, moods, colors) values ('%s', '%s', '%s', '%s')",
                     $songname, $artist, $moods, $colors);
-            
+
                 //$start = $start + 5;
-                
+
                 $result = mysqli_query($db, $sqlQuery);
-                
+
                 if ($result) {
                     echo "<h3>The entry has been added to the database</h3>";
-                } else { 				   
+                } else {
                     echo "Inserting records failed.".mysqli_error($db);
                 }
-            
+
             //}
         }
 
