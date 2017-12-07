@@ -22,6 +22,13 @@
     </span>
   </div>
 
+
+
+
+
+
+
+
   <div id="side-menu" class="side-nav">
     <a href="#" class="btn-close" onclick="closeSlideMenu()" style="text-decoration: none">&times;</a>
     <div id="logo">
@@ -45,6 +52,20 @@
       </ul>
     </div><br><br><br><br>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <div id="main">
     <h1>Main page</h1>

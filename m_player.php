@@ -9,7 +9,6 @@
 	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	  <link rel="stylesheet" href="css/page_template.css">
 	  <link rel="stylesheet" href="css/m_player.css">
-      <link rel="stylesheet" href="css/simpl_style.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src="js/audioPlayer.js"></script>
@@ -89,11 +88,6 @@
 
 
 
-
-
-
-
-
 		<!-- Desktop Elements -->
 		<div class="container-fluid hidden-xs pnl">
 			<div class="row pnl">
@@ -132,59 +126,76 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-<!--							<form action="music_player.html" onsubmit="return getMood(this)" method="post">-->
+<!--						<form action="music_player.html" onsubmit="return getMood(this)" method="post">-->
+							<form action="m_player.php" method="post">
 								<ul class="nav">
-									<!-- on load, generate an unordered list of possible moods as button links -->
-                                    <form action="m_player.php" method="post">
-                                        <input class="linkButton" type="submit" value="happy" name="moodPref"><br>
-                                        <input class="linkButton" type="submit" value="angry" name="moodPref"><br>
-                                        <input class="linkButton" type="submit" value="sad" name="moodPref"><br>
-                                        <input class="linkButton" type="submit" value="excited" name="moodPref">
-                                    </form>
+								<!-- on load, generate an unordered list of possible moods as button links -->
+									<li>
+										<input class="link-btn" type="submit" value="happy" name="moodPref">
+									</li>
+									<li>
+										<input class="link-btn" type="submit" value="angry" name="moodPref">
+									</li>
+									<li>
+										<input class="link-btn" type="submit" value="sad" name="moodPref">
+									</li>
+									<li>
+										<input class="link-btn" type="submit" value="excited" name="moodPref">
+									</li>
+									<li>
+										<input class="link-btn" type="submit" value="relaxed" name="moodPref">
+									</li>
 								</ul>
-<!--							</form>-->
+							</form>
 						</div>
 					</div>	
 				</div>
 				<div class="col-sm-10 pnl">
 					<!-- Desktop Center Panel (album art and song editing windows) -->
 					<div class="row center-pnl">
-						<div id="viewer" class="col-sm-12" >
-							<!-- Desktop Album Art Panel -->
-                            <div id="albumArt">
-                                Show album
+						<div class="col-sm-12" >
+							<!-- Desktop Album Info Panel -->
+                            <div id="album-info" class="row">
+                                <div class="col-sm-2"></div>
+								<div class="col-sm-8 bmprbx">
+									<div class="player-img-lg"></div>
+								</div>
+								<div class="col-sm-2"></div>
                             </div>
 						
 							<!-- Desktop Song Data Editing Panel -->
-                            <div id="editPanel" style="display: none">
-                                <form action="m_player.php" method="post">
-                                    <div class="row bmprbx">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-xs-4 col-sm-2 horizontal-align">
-                                            <button class="clr-slct-btn rd" name="colorPref" value="red"></button>
-                                        </div>
-                                        <div class="col-xs-4 col-sm-2 horizontal-align">
-                                            <button class="clr-slct-btn orng" name="colorPref" value="orange"></button>
-                                        </div>
-                                        <div class="col-xs-4 col-sm-2 horizontal-align">
-                                            <button class="clr-slct-btn yllw" name="colorPref" value="yellow"></button>
-                                        </div>
-                                        <div class="col-sm-3"></div>
-                                    </div>
-                                    <div class="row bmprbx">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-xs-4 col-sm-2 horizontal-align">
-                                            <button class="clr-slct-btn grn" name="colorPref" value="green"></button>
-                                        </div>
-                                        <div class="col-xs-4 col-sm-2 horizontal-align">
-                                            <button class="clr-slct-btn blu" name="colorPref" value="blue"></button>
-                                        </div>
-                                        <div class="col-xs-4 col-sm-2 horizontal-align">
-                                            <button class="clr-slct-btn prpl" name="colorPref" value="purple"></button>
-                                        </div>
-                                        <div class="col-sm-3"></div>
-                                    </div>
-                                </form>
+                            <div id="edit-pnl" class="row hidden">
+								<div class="col-sm-12">
+									<div class="row bmprbx">
+										<h5 class="drk-h">How does this song make you feel?</h5>
+									</div>
+								    <div class="row bmprbx">
+										<div class="col-sm-3"></div>
+								        <div class="col-xs-4 col-sm-2 horizontal-align">
+								            <button class="clr-slct-btn rd" name="colorPref" value="red"></button>
+								        </div>
+										<div class="col-xs-4 col-sm-2 horizontal-align">
+											<button class="clr-slct-btn orng" name="colorPref" value="orange"></button>
+									    </div>
+									    <div class="col-xs-4 col-sm-2 horizontal-align">
+									        <button class="clr-slct-btn yllw" name="colorPref" value="yellow"></button>
+									    </div>
+									    <div class="col-sm-3"></div>
+									</div>
+									<div class="row bmprbx">
+									    <div class="col-sm-3"></div>
+									    <div class="col-xs-4 col-sm-2 horizontal-align">
+									        <button class="clr-slct-btn grn" name="colorPref" value="green"></button>
+									    </div>
+									    <div class="col-xs-4 col-sm-2 horizontal-align">
+									        <button class="clr-slct-btn blu" name="colorPref" value="blue"></button>
+										</div>
+									    <div class="col-xs-4 col-sm-2 horizontal-align">
+										    <button class="clr-slct-btn prpl" name="colorPref" value="purple"></button>
+									    </div>
+									    <div class="col-sm-3"></div>
+								    </div>
+								</div>
                             </div>
 						</div>
 					</div>
@@ -192,7 +203,7 @@
 					<!-- Desktop Audio Control Panel -->
 					<div class="row drk-pnl control-pnl vertical-align">
 						<div class="col-sm-3">
-							<button class="edit-btn gr-btn horizontal-align">
+							<button id="add" class="edit-btn gr-btn horizontal-align">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">add</i>
 							</button>
 						</div>
@@ -213,8 +224,8 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<button class="edit-btn gr-btn horizontal-align">
-								<i class="material-icons" style="font-size: 20px; vertical-align: middle;" onclick="showColorSelect()">create</i>
+							<button id="edit" class="edit-btn gr-btn horizontal-align">
+								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">create</i>
 							</button>
 						</div>
 					</div>
@@ -268,7 +279,7 @@
 			if ($start === 1) {
 				echo "<li class='current-song' style='display: none;'><a href=$array[2]>$array[1]" . " - " . "$array[0]</a></li>";
 				$start = 0;
-			}else {
+			} else {
 				echo "<li style='display: none;'><a href=$array[2]>$array[1]" . " - " . "$array[0]</a></li>";
 			}
 		
@@ -277,17 +288,14 @@
     echo '</ul>';
     ?>
     <script>
-       audioPlayer();
+		audioPlayer();
+		
+		function colorPanelSlider(){
+           document.getElementById("sideNav").style.width = "60em";
+		}
 
-       function showColorSelect() {
-            toggle = document.getElementById('editPanel').style.display;
-            if (toggle === 'none') {
-                toggle = document.getElementById('editPanel').style.display = 'inline-block';
-                document.getElementById('albumArt').style.display = 'none';
-            }else {
-                toggle = document.getElementById('editPanel').style.display = 'none';
-                document.getElementById('albumArt').style.display = 'inline-block';
-            }
-       }
+		function closeNav() {
+			document.getElementById("sideNav").style.width = "0";
+		}
     </script>
 </html>

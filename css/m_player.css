@@ -10,6 +10,32 @@
 	background-color: #cccccc;
 	min-height: 100%;
 }
+
+.sd-nav {
+    height: 58.8%;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    margin-top: 16.5em;
+    opacity: 0.88;
+}
+
+.sd-nav .btn-close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
 .center-pnl{
 	height: 85%;
 }
@@ -45,14 +71,24 @@
 }
 
 .player-img-lg{
+	display: block;
+	margin: auto;
 	background-color: #dddddd;
 	text-align: center;
-	height: 70%;
-	width: 65%;
+	height: 420px;
+	width: 450px;
 }
 
 .audio-btn-group{
 	text-align: center;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: #0066ff;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .audio-btn{
@@ -94,3 +130,5 @@
 	min-width: 4em;
 	min-height: 4em;
 }
+
+
