@@ -1,3 +1,7 @@
+<?php
+    require_once('dbInfo.php');
+	$db = new mysqli($servername, $username, $password, $base)
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
@@ -383,7 +387,7 @@
 	
 	<?php
 	
-	$mood = "happy";
+	$mood = "";
 	$color = "";
 	
 	if (isset($_POST['colorPref'])) {
@@ -401,27 +405,70 @@
     $file = fopen($file, "r") or die("Unable to open file!");
     echo '<ul id="playlist">';
     $start = 1;
-		
-    while(!feof($file)) {
-				
-		
-        $line = fgets($file);
-        if($line === false) break;
-        $array = explode("||", $line);
-        
-		//echo "<pre>".$array[3]."/n"."</pre>";
-		
-		if (($mood == null && $color == null) || ((($mood != null) && strpos($array[3], $mood)) || (($color != null) && (strpos($array[4], $color))))) {
-		
-			if ($start === 1) {
-				echo "<li class='current-song' style='display: none;'><a href=$array[2]>$array[1]" . " - " . "$array[0]</a></li>";
+	
+	if ($db->connect_error) {
+		die($db->connect_error);
+	} 
+	
+	/* Query */
+	if ( $mood != null ) {
+		$query = "select * from songList where moods = '$mood'";
+	} else if ( $color != null ) {
+		$query = "select * from songList where colors = '$color'";
+	} else {
+		$query = "select * from songList";
+	}
+			
+	
+	/* Executing query */
+	$result = $db->query($query);
+	if (!$result) {
+		die("Retrieval failed: ". $db->error);
+	} else {
+		/* Number of rows found */
+		$num_rows = $result->num_rows;
+		if ($num_rows === 0) {
+		//	echo "Empty Table<br>";
+		} else {
+			for ($row_index = 0; $row_index < $num_rows; $row_index++) {
+				$result->data_seek($row_index);
+				$row = $result->fetch_array(MYSQLI_ASSOC);
+				$link = $row['link'];
+				$artist = $row['artist'];
+				$song = $row['songname'];
+				if ($start === 1) {
+				echo "<li class='current-song'><a href=$link>". $artist . " - " . $song . "</a></li>";
 				$start = 0;
-			} else {
-				echo "<li style='display: none;'><a href=$array[2]>$array[1]" . " - " . "$array[0]</a></li>";
+				} else {
+					echo "<li><a href=$link>". $artist . " - " . $song . "</a></li>";
+				}
+				
+				//echo "Link: {$row['link']}";
 			}
+		}
+	}
 		
-		} 
-    }
+//    while(!feof($file)) {
+//				
+//		
+//        $line = fgets($file);
+//        if($line === false) break;
+//        $array = explode("||", $line);
+//        
+//		echo "<pre>".$array[3]."/n"."</pre>";
+//		
+//		if ( ( ( ( $mood != null ) && strpos($array[3], $mood) ) || ( $color != null && (strpos($array[4], $color)) ) ) || ($mood==null
+//																										&& $color==null)) {
+//		
+//			if ($start === 1) {
+//				echo "<li class='current-song' style='display: none;'><a href=$array[2]>" . " - " . "</a></li>";
+//				$start = 0;
+//			} else {
+//				echo "<li style='display: none;'><a href=$array[2]>" . " - " . "</a></li>";
+//			}
+//		
+//		} 
+//    }
     echo '</ul>';
     ?>
     <script>
