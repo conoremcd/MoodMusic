@@ -1,6 +1,6 @@
 <?php
     require_once('dbInfo.php');
-	$db = new mysqli($servername, $username, $password, $base)
+	$db = new mysqli($host, $user, $password, $database)
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -16,7 +16,6 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src="js/audioPlayer.js"></script>
-      <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 	</head>
 	<body>
 		<!-- Mobile Elements -->
@@ -209,7 +208,6 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-<!--						<form action="music_player.html" onsubmit="return getMood(this)" method="post">-->
 							<form action="m_player.php" method="post">
 								<ul class="nav">
 								<!-- on load, generate an unordered list of possible moods as button links -->
@@ -270,15 +268,15 @@
 												</div>
 												<div class="row bmprbx">
 													<div class="col-sm-2"></div>
-														<div class="col-xs-4 col-sm-3 horizontal-align">
-															<button class="clr-slct-btn grn sd-nav-cntnt" name="colorPref" value="green"></button>
-														</div>
-														<div class="col-xs-4 col-sm-3 horizontal-align">
-															<button class="clr-slct-btn blu sd-nav-cntnt" name="colorPref" value="blue"></button>
-														</div>
-														<div class="col-xs-4 col-sm-3 horizontal-align">
-															<button class="clr-slct-btn prpl sd-nav-cntnt" name="colorPref" value="purple"></button>
-														</div>
+													<div class="col-xs-4 col-sm-3 horizontal-align">
+														<button class="clr-slct-btn grn sd-nav-cntnt" name="colorPref" value="green"></button>
+													</div>
+													<div class="col-xs-4 col-sm-3 horizontal-align">
+														<button class="clr-slct-btn blu sd-nav-cntnt" name="colorPref" value="blue"></button>
+													</div>
+													<div class="col-xs-4 col-sm-3 horizontal-align">
+														<button class="clr-slct-btn prpl sd-nav-cntnt" name="colorPref" value="purple"></button>
+													</div>
 													<div class="col-sm-1"></div>
 												</div>
 												<div class="row bmprbox">
