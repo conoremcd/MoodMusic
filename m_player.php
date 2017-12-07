@@ -253,32 +253,34 @@
 												<div class="row bmprbx">
 													<p class="gr-h horizontal-align sd-nav-cntnt">Select a color and click Load Playlist!</p>
 												</div>
-												<div class="row bmprbx">
-													<div class="col-sm-2"></div>
-												    <div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn rd sd-nav-cntnt" name="colorPref" value="red"></button>
-												    </div>
-													<div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn orng sd-nav-cntnt" name="colorPref" value="orange"></button>
-													</div>
-													<div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn yllw sd-nav-cntnt" name="colorPref" value="yellow"></button>
-													</div>
-													<div class="col-sm-1"></div>
-												</div>
-												<div class="row bmprbx">
-													<div class="col-sm-2"></div>
-													<div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn grn sd-nav-cntnt" name="colorPref" value="green"></button>
-													</div>
-													<div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn blu sd-nav-cntnt" name="colorPref" value="blue"></button>
-													</div>
-													<div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn prpl sd-nav-cntnt" name="colorPref" value="purple"></button>
-													</div>
-													<div class="col-sm-1"></div>
-												</div>
+                                                <form action="m_player.php" method="post">
+                                                    <div class="row bmprbx">
+                                                        <div class="col-sm-2"></div>
+                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+                                                            <button class="clr-slct-btn rd sd-nav-cntnt" name="colorPref" value="red"></button>
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+                                                            <button class="clr-slct-btn orng sd-nav-cntnt" name="colorPref" value="orange"></button>
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+                                                            <button class="clr-slct-btn yllw sd-nav-cntnt" name="colorPref" value="yellow"></button>
+                                                        </div>
+                                                        <div class="col-sm-1"></div>
+                                                    </div>
+                                                    <div class="row bmprbx">
+                                                        <div class="col-sm-2"></div>
+                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+                                                                <button class="clr-slct-btn grn sd-nav-cntnt" name="colorPref" value="green"></button>
+                                                            </div>
+                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+                                                                <button class="clr-slct-btn blu sd-nav-cntnt" name="colorPref" value="blue"></button>
+                                                            </div>
+                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+                                                                <button class="clr-slct-btn prpl sd-nav-cntnt" name="colorPref" value="purple"></button>
+                                                            </div>
+                                                        <div class="col-sm-1"></div>
+                                                    </div>
+                                                </form>
 												<div class="row bmprbox">
 													<br>
 													<br>
