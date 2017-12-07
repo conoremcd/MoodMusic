@@ -111,13 +111,12 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-9 col-md-7">
-							<form action="colorRequestor.php" onsubmit="return getColor(this)" method="post">
-								<button id="ch_color" class="clr-btn drk-btn btn btn-sm btn-block btm-bmpr"  >
+<!--							<form action="colorRequestor.php" onsubmit="return getColor(this)" method="post">-->
+								<button id="ch_color" class="clr-btn drk-btn btn btn-sm btn-block btm-bmpr" onclick="colorPanelSlider()">
 									<img src="images/change-color.svg" alt="">
 								</button>
-							</form>
+<!--							</form>-->
 						</div>
-						<div class="col-sm-3 col-md-5"></div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
@@ -232,6 +231,14 @@
 				</div>
 			</div>
 		</div>
+<!--        Creates the slide bar for select color-->
+<!--        Need to change the z-index of the main sidebar so that this slide bar is just right behind it.-->
+<!--        Just needs to bigger than 1-->
+        <div id="sideNav" class="sd-nav">
+            <a href="#" class="btn-close" onclick="closeNav()">&times;</a>
+        </div>
+<!---->
+        <div class="col-sm-3 col-md-5"></div>
 		<footer class="container-fluid footer">
 			<div class="row">
 				<div class="col-xs-1 col-sm-1"></div>
