@@ -1,8 +1,3 @@
-<?php
-    require_once('dbInfo.php');
-	require_once('songtoDBLoader.php');
-	$db = new mysqli($host, $user, $password, $database)
-?>
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
@@ -385,9 +380,11 @@
 			</div>
 		</footer>
 	</body>
-	
 	<?php
-	
+    require_once('dbInfo.php');
+	require_once('songtoDBLoader.php');
+	$db = new mysqli($host, $user, $password, $database);
+
 	$mood = "";
 	$color = "";
 	
@@ -404,7 +401,7 @@
     echo "<audio src='' controls id='audioPlayer' style='display: none'></audio>";
     $file = "audio_player/DefaultPlaylist.txt";
     $file = fopen($file, "r") or die("Unable to open file!");
-    echo '<ul id="playlist">';
+    echo '<ul id="playlist" style="display: none;">';
     $start = 1;
 	
 	if ($db->connect_error) {
@@ -448,28 +445,6 @@
 			}
 		}
 	}
-		
-//    while(!feof($file)) {
-//				
-//		
-//        $line = fgets($file);
-//        if($line === false) break;
-//        $array = explode("||", $line);
-//        
-//		echo "<pre>".$array[3]."/n"."</pre>";
-//		
-//		if ( ( ( ( $mood != null ) && strpos($array[3], $mood) ) || ( $color != null && (strpos($array[4], $color)) ) ) || ($mood==null
-//																										&& $color==null)) {
-//		
-//			if ($start === 1) {
-//				echo "<li class='current-song' style='display: none;'><a href=$array[2]>" . " - " . "</a></li>";
-//				$start = 0;
-//			} else {
-//				echo "<li style='display: none;'><a href=$array[2]>" . " - " . "</a></li>";
-//			}
-//		
-//		} 
-//    }
     echo '</ul>';
     ?>
     <script>
