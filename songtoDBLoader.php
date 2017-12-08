@@ -78,7 +78,7 @@ $file = "audio_player/DefaultPlaylist.txt";
                 $result = mysqli_query($db, $sqlQuery);
 
                 if ($result) {
-                    echo "<h3>The entry has been added to the database</h3>";
+                    //echo "<h3>The entry has been added to the database</h3>";
                 } else {
                     echo "Inserting records failed.".mysqli_error($db);
                 }
