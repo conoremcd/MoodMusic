@@ -10,7 +10,7 @@
 	  <link rel="stylesheet" href="css/page_template.css">
 	  <link rel="stylesheet" href="css/m_player.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src="js/audioPlayer.js"></script>
 	</head>
 	<body>
@@ -250,42 +250,56 @@
 													<p class="gr-h horizontal-align sd-nav-cntnt">Select a color and click Load Playlist!</p>
 												</div>
                                                 <form action="m_player.php" method="post">
-                                                    <div class="row bmprbx">
-                                                        <div class="col-sm-2"></div>
-                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
-                                                            <button class="clr-slct-btn rd sd-nav-cntnt" name="colorPref" value="red"></button>
-                                                        </div>
-                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
-                                                            <button class="clr-slct-btn orng sd-nav-cntnt" name="colorPref" value="orange"></button>
-                                                        </div>
-                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
-                                                            <button class="clr-slct-btn yllw sd-nav-cntnt" name="colorPref" value="yellow"></button>
-                                                        </div>
-                                                        <div class="col-sm-1"></div>
+                                                	<div data-toggle="buttons">
+	                                                    <div class="row bmprbx">
+	                                                        <div class="col-sm-2"></div>
+	                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                            <label class="btn clr-slct-btn rd">
+																	<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
+																</label>
+	                                                        </div>
+	                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                            <label class="btn clr-slct-btn orng">
+																	<input class="color-radio-btn" type="radio" name="colorPref" value="orange" autocomplete="off" >
+																</label>
+	                                                        </div>
+	                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                            <label class="btn clr-slct-btn yllw">
+																	<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
+																</label>
+	                                                        </div>
+	                                                        <div class="col-sm-1"></div>
+	                                                    </div>
+	                                                    <div class="row bmprbx">
+	                                                        <div class="col-sm-2"></div>
+	                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                                <label class="btn clr-slct-btn grn">
+																		<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
+																	</label>
+	                                                            </div>
+	                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                                <label class="btn clr-slct-btn blu">
+																		<input class="color-radio-btn" type="radio" name="colorPref" value="blue" autocomplete="off" >
+																	</label>
+	                                                            </div>
+	                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                                <label class="btn clr-slct-btn prpl">
+																		<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
+																	</label>
+	                                                            </div>
+	                                                        <div class="col-sm-1"></div>
+	                                                    </div>
                                                     </div>
-                                                    <div class="row bmprbx">
-                                                        <div class="col-sm-2"></div>
-                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
-                                                                <button class="clr-slct-btn grn sd-nav-cntnt" name="colorPref" value="green"></button>
-                                                            </div>
-                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
-                                                                <button class="clr-slct-btn blu sd-nav-cntnt" name="colorPref" value="blue"></button>
-                                                            </div>
-                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
-                                                                <button class="clr-slct-btn prpl sd-nav-cntnt" name="colorPref" value="purple"></button>
-                                                            </div>
-                                                        <div class="col-sm-1"></div>
-                                                    </div>
-                                                </form>
-												<div class="row bmprbox">
-													<br>
-													<br>
-													<div class="col-sm-8"></div>
-													<div class="col-sm-3">
-														<button class="cnfrm-btn btn btn-sm btn-block sd-nav-cntnt" type="submit">Load Playlist</button>
+													<div class="row bmprbox">
+														<br>
+														<br>
+														<div class="col-sm-8"></div>
+														<div class="col-sm-3">
+															<button class="cnfrm-btn btn btn-sm btn-block sd-nav-cntnt" type="submit">Load Playlist</button>
+														</div>
+														<div class="col-sm-1"></div>
 													</div>
-													<div class="col-sm-1"></div>
-												</div>
+												</form>
 											</div>
 										</div>
 									</div>
@@ -307,32 +321,46 @@
 									<div class="row bmprbx">
 										<h5 class="drk-h">How does this song make you feel?</h5>
 									</div>
-								    <div class="row bmprbx">
-										<div class="col-sm-3"></div>
-								        <div class="col-xs-4 col-sm-2 horizontal-align">
-								            <button class="clr-slct-btn rd" name="colorPref" value="red"></button>
-								        </div>
-										<div class="col-xs-4 col-sm-2 horizontal-align">
-											<button class="clr-slct-btn orng" name="colorPref" value="orange"></button>
-									    </div>
-									    <div class="col-xs-4 col-sm-2 horizontal-align">
-									        <button class="clr-slct-btn yllw" name="colorPref" value="yellow"></button>
-									    </div>
-									    <div class="col-sm-3"></div>
-									</div>
-									<div class="row bmprbx">
-									    <div class="col-sm-3"></div>
-									    <div class="col-xs-4 col-sm-2 horizontal-align">
-									        <button class="clr-slct-btn grn" name="colorPref" value="green"></button>
-									    </div>
-									    <div class="col-xs-4 col-sm-2 horizontal-align">
-									        <button class="clr-slct-btn blu" name="colorPref" value="blue"></button>
+									<div data-toggle="buttons">
+									    <div class="row bmprbx">
+											<div class="col-sm-3"></div>
+									        	<div class="col-xs-4 col-sm-2 horizontal-align">
+													<label class="btn clr-slct-btn rd">
+														<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
+													</label>
+												</div>
+												<div class="col-xs-4 col-sm-2 horizontal-align">
+													<label class="btn clr-slct-btn orng">
+														<input class="color-radio-btn" type="radio" name="colorPref" value="orange" autocomplete="off" >
+													</label>
+												</div>
+												<div class="col-xs-4 col-sm-2 horizontal-align">
+													<label class="btn clr-slct-btn yllw">
+														<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
+													</label>
+												</div>
+										    <div class="col-sm-3"></div>
 										</div>
-									    <div class="col-xs-4 col-sm-2 horizontal-align">
-										    <button class="clr-slct-btn prpl" name="colorPref" value="purple"></button>
+										<div class="row bmprbx">
+										    <div class="col-sm-3"></div>
+										    	<div class="col-xs-4 col-sm-2 horizontal-align">
+													<label class="btn clr-slct-btn grn">
+														<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
+													</label>
+												</div>
+												<div class="col-xs-4 col-sm-2 horizontal-align">
+													<label class="btn clr-slct-btn blu">
+														<input class="color-radio-btn" type="radio" name="colorPref" value="blue" autocomplete="off" >
+													</label>
+												</div>
+												<div class="col-xs-4 col-sm-2 horizontal-align">
+													<label class="btn clr-slct-btn prpl">
+														<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
+													</label>
+												</div>
+										    <div class="col-sm-3"></div>
 									    </div>
-									    <div class="col-sm-3"></div>
-								    </div>
+									</div>
 								</div>
                             </div>
 						</div>
@@ -341,28 +369,28 @@
 					<!-- Desktop Audio Control Panel -->
 					<div class="row drk-pnl control-pnl vertical-align">
 						<div class="col-sm-3">
-							<button id="add" class="edit-btn gr-btn horizontal-align">
+							<button id="add" class="edit-btn gr-btn horizontal-align" data-toggle="tooltip" title="Add">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">add</i>
 							</button>
 						</div>
 						<div class="col-sm-6">
 							<div class="audio-btn-group">
-								<button id="previous" class="audio-btn gr-btn">
+								<button id="previous" class="audio-btn gr-btn" data-toggle="tooltip" title="Previous Track">
 									<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_previous</i>
 								</button>
-								<button id="play" class="play audio-btn gr-btn hidden">
+								<button id="play" class="play audio-btn gr-btn hidden" data-toggle="tooltip" title="Play">
 									<i class="material-icons" style="font-size: 36px; vertical-align: middle;">play_arrow</i>
 								</button>
-								<button id="pause" class="pause audio-btn gr-btn">
+								<button id="pause" class="pause audio-btn gr-btn" data-toggle="tooltip" title="Pause">
 									<i class="material-icons" style="font-size: 36px; vertical-align: middle;">pause</i>
 								</button>
-								<button id="next" class="audio-btn gr-btn">
+								<button id="next" class="audio-btn gr-btn" data-toggle="tooltip" title="Next Track">
 									<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_next</i>
 								</button>
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<button id="edit" class="edit-btn gr-btn horizontal-align">
+							<button data-toggle="tooltip" title="Rate Song" id="edit" class="edit-btn gr-btn horizontal-align">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">create</i>
 							</button>
 						</div>
@@ -449,6 +477,8 @@
     ?>
     <script>
 		audioPlayer();
-		
+		$(document).ready(function(){
+   			$('[data-toggle="tooltip"]').tooltip();   
+		});
     </script>
 </html>
