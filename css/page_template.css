@@ -138,6 +138,11 @@ body{
 	background-color: rgb(25, 150, 125);
 }
 
-.clr-slct-btn:focus , .clr-slct-btn:active{
-	
+.btn.clr-slct-btn.active{
+	height: 6em;
+	width: 6em;
+}
+
+.color-radio-btn{
+	visibility: hidden;
 }

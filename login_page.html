@@ -6,7 +6,7 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <link rel="stylesheet" href="css/page_template.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src="js/login_page.js"></script>
 	</head>
@@ -34,6 +34,7 @@
 					<div class="col-xs-9">
 							<h4 class="drk-h"> Log In to Your Account </h4>
 							<br>
+							<div id="login-error-xs" class="text-danger"></div>
 							Username <br>
 							<input id="username-xs" class="form-control input-sm" type="text" name="username" maxlength="50" required="required" />
 							<br>
@@ -76,6 +77,7 @@
 					<div class="col-sm-4">
 						<h2 class="drk-h"> Log In to Your Account </h2>
 						<br>
+						<div id="login-error-lg" class="text-danger"></div>
 						Username <br>
 						<input id="username-lg" class="form-control input-sm" type="text" name="username" required="required" />
 						<br>
