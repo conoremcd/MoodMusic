@@ -1,7 +1,7 @@
 <?php
 	$host = "localhost";
 	$user = "root";
-	$password = "demo123";
+	$password = "";
 	$database = "moodMusicDB";
 ?>
 
