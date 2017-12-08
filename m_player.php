@@ -1,5 +1,6 @@
 <?php
     require_once('dbInfo.php');
+	require_once('songtoDBLoader.php');
 	$db = new mysqli($host, $user, $password, $database)
 ?>
 <!DOCTYPE HTML>

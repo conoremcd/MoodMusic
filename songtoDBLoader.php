@@ -4,7 +4,7 @@
 require_once('dbInfo.php');
 
 // Create connection
-$conn = new mysqli("localhost", $username, $password, $database);
+$conn = new mysqli($host, $user, $password, $database);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -28,7 +28,7 @@ colors VARCHAR(30) NOT NULL,
 link VARCHAR(250) NOT NULL 
 )";
 
-$db = connectToDB($servername, $username, $password, $base);
+$db = connectToDB($host, $user, $password, $database);
 
 function connectToDB($host, $user, $password, $database) {
 	$db = mysqli_connect($host, $user, $password, $database);
