@@ -2,6 +2,6 @@
 	$host = "localhost";
 	$user = "root";
 	$password = "";
-	$database = "moodMusicDB";
+	$database = "moodmusicDB";
 ?>
 

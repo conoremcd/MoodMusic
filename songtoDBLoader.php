@@ -4,7 +4,7 @@
 require_once('dbInfo.php');
 
 // Create connection
-$conn = new mysqli($host, $user, $password, $database);
+$conn = new mysqli($host, $user, $password);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 // Create database
 $sql = "CREATE DATABASE moodmusicDB";
 if ($conn->query($sql) === TRUE) {
-    echo "Database created successfully";
+
 } else if (strpos($conn->error, "database exists")) {
 
 } else {
@@ -42,7 +42,7 @@ function connectToDB($host, $user, $password, $database) {
 $result = mysqli_query($db, $sqlQuery);
 
                 if ($result) {
-                    echo "Table creation success.";
+//                    echo "Table creation success.";
                 } else if (strpos(mysqli_error($db), "already exists")) {
 
                 } else {
