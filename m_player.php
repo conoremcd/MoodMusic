@@ -208,19 +208,19 @@
 								<ul class="nav">
 								<!-- on load, generate an unordered list of possible moods as button links -->
 									<li>
-										<input class="link-btn" type="submit" value="happy" name="moodPref">
+										<input class="link-btn" type="submit" value="Enjoying Life" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="angry" name="moodPref">
+										<input class="link-btn" type="submit" value="Furious" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="sad" name="moodPref">
+										<input class="link-btn" type="submit" value="Pick Me Up" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="excited" name="moodPref">
+										<input class="link-btn" type="submit" value="Pumped Up" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="relaxed" name="moodPref">
+										<input class="link-btn" type="submit" value="Chilled Out" name="moodPref">
 									</li>
 								</ul>
 							</form>
@@ -319,48 +319,50 @@
                             <div id="edit-pnl" class="row hidden">
 								<div class="col-sm-12">
 									<div class="row bmprbx">
-										<h5 class="drk-h">How does this song make you feel?</h5>
+										<h5 class="drk-h">How does this song make you feel??</h5>
 									</div>
-									<div data-toggle="buttons">
-									    <div class="row bmprbx">
-											<div class="col-sm-3"></div>
-									        	<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn rd">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
-													</label>
-												</div>
-												<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn orng">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="orange" autocomplete="off" >
-													</label>
-												</div>
-												<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn yllw">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
-													</label>
-												</div>
-										    <div class="col-sm-3"></div>
-										</div>
-										<div class="row bmprbx">
-										    <div class="col-sm-3"></div>
-										    	<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn grn">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
-													</label>
-												</div>
-												<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn blu">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="blue" autocomplete="off" >
-													</label>
-												</div>
-												<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn prpl">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
-													</label>
-												</div>
-										    <div class="col-sm-3"></div>
-									    </div>
-									</div>
+                                    <form id="color_radio">
+                                        <div data-toggle="buttons">
+                                            <div class="row bmprbx">
+                                                <div class="col-sm-3"></div>
+                                                    <div class="col-xs-4 col-sm-2 horizontal-align">
+                                                        <label class="btn clr-slct-btn rd">
+                                                            <input class="color-radio-btn" type="radio" name="editColor" value="red" autocomplete="off" checked="checked">
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-2 horizontal-align">
+                                                        <label class="btn clr-slct-btn orng">
+                                                            <input class="color-radio-btn" type="radio" name="editColor" value="orange" autocomplete="off" >
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-2 horizontal-align">
+                                                        <label class="btn clr-slct-btn yllw">
+                                                            <input class="color-radio-btn" type="radio" name="editColor" value="yellow" autocomplete="off" >
+                                                        </label>
+                                                    </div>
+                                                <div class="col-sm-3"></div>
+                                            </div>
+                                            <div class="row bmprbx">
+                                                <div class="col-sm-3"></div>
+                                                    <div class="col-xs-4 col-sm-2 horizontal-align">
+                                                        <label class="btn clr-slct-btn grn">
+                                                            <input class="color-radio-btn" type="radio" name="editColor" value="green" autocomplete="off" >
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-2 horizontal-align">
+                                                        <label class="btn clr-slct-btn blu">
+                                                            <input class="color-radio-btn" type="radio" name="editColor" value="blue" autocomplete="off" >
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-2 horizontal-align">
+                                                        <label class="btn clr-slct-btn prpl">
+                                                            <input class="color-radio-btn" type="radio" name="editColor" value="purple" autocomplete="off" >
+                                                        </label>
+                                                    </div>
+                                                <div class="col-sm-3"></div>
+                                            </div>
+                                        </div>
+                                    </form>
 								</div>
                             </div>
 						</div>

@@ -48,4 +48,32 @@ function audioPlayer() {
         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
         $("#audioPlayer")[0].play();
     });
+
+    // $("#editSong").click(function (event) {//need to create that button
+    //
+    //     var mysql = require('mysql');
+    //
+    //     var con = mysql.createConnection({
+    //         host: "localhost",
+    //         user: "root",
+    //         password: "",
+    //         database: "moodMusicDB"
+    //     });
+    //
+    //     var songChange = $("#playlist li a")[currentSong].href;
+    //     console.log(songChange);
+    //
+    //     con.connect(function(err) {
+    //         if (err) throw err;
+    //         var sql = string.concat("UPDATE songList SET colors = ' ",val1, " ' WHERE songname = '",val2,"'");
+    //         con.query(sql, function (err, result) {
+    //             if (err) throw err;
+    //             console.log(result.affectedRows + " record(s) updated");
+    //         });
+    //     });
+    // })
+
+    // $('#color_radio input').on('change', function () {
+    //     alert($('input[name=editColor]:checked', '#color_radio').val());
+    // })
 }
