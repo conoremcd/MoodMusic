@@ -311,6 +311,15 @@
                                 <div class="col-sm-2"></div>
 								<div class="col-sm-8 bmprbx">
 									<div class="player-img-lg"></div>
+									   <div class="player-controls ">
+      										<div id="songInfo" class="col-sm-offset-5"></div>
+      										<span id="seekObjContainer">
+			  									<progress id="seekObj" value="0" max="1"></progress>
+											</span>
+      										<br>
+      										<small class="start-time"></small>
+  											<small class="end-time"></small>
+  										</div>
 								</div>
 								<div class="col-sm-2"></div>
                             </div>
@@ -428,7 +437,7 @@
 			$color=null;
 	}
 	
-    echo "<audio src='' controls id='audioPlayer' style='display: none'></audio>";
+    echo "<audio src='' id='audioPlayer'></audio>";
     $file = "audio_player/DefaultPlaylist.txt";
     $file = fopen($file, "r") or die("Unable to open file!");
     echo '<ul id="playlist" style="display: none;">';
@@ -480,6 +489,8 @@
     <script>
 		audioPlayer();
 		$(document).ready(function(){
+			$('#songInfo').html("<?php echo $song . '<br>' . $artist ?>");
+			$('#audioPlayer').on("timeupdate" , initProgressBar);
    			$('[data-toggle="tooltip"]').tooltip();   
 		});
     </script>
