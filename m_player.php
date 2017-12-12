@@ -474,10 +474,10 @@
 				$artist = $row['artist'];
 				$song = $row['songname'];
 				if ($start === 1) {
-				echo "<li class='current-song'><a href=$link>". $artist . " - " . $song . "</a></li>";
+				echo "<li class='current-song'><a href=$link data-artist='{$artist}' data-song='{$song}'>". $artist . " - " . $song . "</a></li>";
 				$start = 0;
 				} else {
-					echo "<li><a href=$link>". $artist . " - " . $song . "</a></li>";
+					echo "<li><a href=$link data-artist='{$artist}' data-song='{$song}'>". $artist . " - " . $song . "</a></li>";
 				}
 				
 				//echo "Link: {$row['link']}";
@@ -489,7 +489,6 @@
     <script>
 		audioPlayer();
 		$(document).ready(function(){
-			$('#songInfo').html("<?php echo $song . '<br>' . $artist ?>");
 			$('#audioPlayer').on("timeupdate" , initProgressBar);
    			$('[data-toggle="tooltip"]').tooltip();   
 		});

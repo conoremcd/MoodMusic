@@ -1,5 +1,16 @@
 function audioPlayer() {
     var currentSong = 0;
+
+
+    function updateSongInfo(currentSong){
+        var audioElement = $("#playlist li a").get(currentSong);
+        var artist = $(audioElement).data('artist');
+        var song = $(audioElement).data('song');
+
+        $("#songInfo").html( song + "<br>" + artist);
+    }
+
+    updateSongInfo(currentSong);
     $("#audioPlayer")[0].src = $("#playlist li a")[0];
     $("#audioPlayer")[0].play();
     $("#playlist li a").click(function (event) {
@@ -17,8 +28,13 @@ function audioPlayer() {
         currentSong++;
         if (currentSong === $("#playlist li a").length)
             currentSong = 0;
+
+        updateSongInfo(currentSong);
         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
         $("#audioPlayer")[0].play();
+        //show pause button since we want to autoplay the next track
+        $("#play").addClass("hidden");
+        $("#pause").removeClass("hidden");
         $("#playlist li").removeClass("current-song");
         $("#playlist li:eq("+currentSong+")").addClass("current-song");
         $(this).parent().addClass("current-song");
@@ -28,8 +44,12 @@ function audioPlayer() {
     $("#previous").click(function (event) {
         event.preventDefault();
         currentSong--;
+        updateSongInfo(currentSong);
         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
         $("#audioPlayer")[0].play();
+        //show pause button since we want to autoplay the next track
+        $("#play").addClass("hidden");
+        $("#pause").removeClass("hidden");
         $("#playlist li").removeClass("current-song");
         $("#playlist li:eq("+currentSong+")").addClass("current-song");
         $(this).parent().addClass("current-song");
@@ -46,6 +66,8 @@ function audioPlayer() {
         $("#play").addClass("hidden");
         $("#pause").removeClass("hidden");
     });
+
+
     
 	 $("#edit").click(function (event) {
         toggle = document.getElementById("edit-pnl").classList.contains('hidden');
