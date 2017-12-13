@@ -319,11 +319,16 @@
                             <div id="edit-pnl" class="row hidden">
 								<div class="col-sm-12">
 									<div class="row bmprbx">
-										<h5 class="drk-h">How does this song make you feel?</h5>
-									</div>
-									<div data-toggle="buttons">
-									    <div class="row bmprbx">
+										<div class="row bmprbx">
 											<div class="col-sm-3"></div>
+											<div class="col-sm-6">
+												<h3 class="drk-h horizontal-align">How does this song make you feel?</h3>
+											</div>
+											<div class="col-sm-3"></div>
+										</div>
+										<div data-toggle="buttons">
+										    <div class="row bmprbx">
+												<div class="col-sm-3"></div>
 									        	<div class="col-xs-4 col-sm-2 horizontal-align">
 													<label class="btn clr-slct-btn rd">
 														<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
@@ -339,11 +344,11 @@
 														<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
 													</label>
 												</div>
-										    <div class="col-sm-3"></div>
-										</div>
-										<div class="row bmprbx">
-										    <div class="col-sm-3"></div>
-										    	<div class="col-xs-4 col-sm-2 horizontal-align">
+											    <div class="col-sm-3"></div>
+											</div>
+											<div class="row bmprbx">
+											    <div class="col-sm-3"></div>
+											    <div class="col-xs-4 col-sm-2 horizontal-align">
 													<label class="btn clr-slct-btn grn">
 														<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
 													</label>
@@ -358,8 +363,16 @@
 														<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
 													</label>
 												</div>
-										    <div class="col-sm-3"></div>
-									    </div>
+											    <div class="col-sm-3"></div>
+										    </div>
+										</div>
+										<div class="row bmprbx">
+											<div class="col-sm-7"></div>
+											<div class="col-sm-2">
+												<button class="cnfrm-btn btn btn-sm btn-block" type="submit">Save Song Data</button>
+											</div>
+											<div class="col-sm-3"></div>
+										</div>
 									</div>
 								</div>
                             </div>
@@ -477,8 +490,5 @@
     ?>
     <script>
 		audioPlayer();
-		$(document).ready(function(){
-   			$('[data-toggle="tooltip"]').tooltip();   
-		});
     </script>
 </html>

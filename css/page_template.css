@@ -139,8 +139,7 @@ body{
 }
 
 .btn.clr-slct-btn.active{
-	height: 6em;
-	width: 6em;
+	border-color: #cccccc;
 }
 
 .color-radio-btn{
