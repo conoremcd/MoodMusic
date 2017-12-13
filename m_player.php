@@ -310,7 +310,7 @@
                             <div id="album-info" class="row">
                                 <div class="col-sm-2"></div>
 								<div class="col-sm-8 bmprbx">
-									<div class="player-img-lg"></div>
+									<div class="player-img-lg"><img id="album-cover" height="100%" width="100%" /></div>
 									   <div class="player-controls ">
       										<div id="songInfo"></div>
       										<span id="seekObjContainer">

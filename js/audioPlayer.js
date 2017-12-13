@@ -2,10 +2,62 @@ function audioPlayer() {
     var currentSong = 0;
 
 
+    function updateAlbumCover(songName){
+        var albumCover = null;
+        switch (songName){
+            case 'Silence':
+                albumCover = "silence";
+                break;
+            case 'You and Me':
+                albumCover = "you_and_me";
+                break;
+            case 'Alone':
+                albumCover = "alone";
+                break;
+            case 'PTSD':
+                albumCover = "ptsd";
+                break;
+            case 'Born Sinner':
+                albumCover = "born_sinner";
+                break;
+            case 'Ill Mind of Hopsin':
+                albumCover = "ill_mind_of_hopsin";
+                break;
+            case 'See You Again':
+                albumCover = "see_you_again";
+                break;
+            case 'Goosebumps':
+                albumCover = "goosebumps";
+                break;
+            case '1-800-273-8355':
+                albumCover = "18002738255";
+                break;
+            case 'Starboy':
+                albumCover = "starboy";
+                break;
+            case 'Through the Late Night':
+                albumCover = "through_the_late_night";
+                break;
+            case 'Let Nas Down':
+                albumCover = "let_nas_down";
+                break;
+            case "I Stand Alone":
+                albumCover = "i_stand_alone";
+                break;
+            default:
+
+        }
+        $("#album-cover").get(0).src = "images/album-covers/" + albumCover +".jpg"; 
+    }
+
     function updateSongInfo(currentSong){
         var audioElement = $("#playlist li a").get(currentSong);
         var artist = $(audioElement).data('artist');
+        artist = artist.trim();
         var song = $(audioElement).data('song');
+        song = song.trim();
+
+        updateAlbumCover(song);
 
         $("#songInfo").html( song + "<br>" + artist);
     }
