@@ -29,7 +29,7 @@ function audioPlayer() {
             case 'Goosebumps':
                 albumCover = "goosebumps";
                 break;
-            case '1-800-273-8355':
+            case '1-800-273-8255':
                 albumCover = "18002738255";
                 break;
             case 'Starboy':
