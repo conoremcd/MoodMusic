@@ -165,3 +165,7 @@
 	float: right; 
 	position: relative; 
 }
+
+#songInfo{
+	text-align: center;
+}

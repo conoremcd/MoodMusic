@@ -312,7 +312,7 @@
 								<div class="col-sm-8 bmprbx">
 									<div class="player-img-lg"></div>
 									   <div class="player-controls ">
-      										<div id="songInfo" class="col-sm-offset-5"></div>
+      										<div id="songInfo"></div>
       										<span id="seekObjContainer">
 			  									<progress id="seekObj" value="0" max="1"></progress>
 											</span>
