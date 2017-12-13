@@ -45,7 +45,7 @@ function audioPlayer() {
                 albumCover = "i_stand_alone";
                 break;
             default:
-
+                albumCover = "default";
         }
         $("#album-cover").get(0).src = "images/album-covers/" + albumCover +".jpg"; 
     }
