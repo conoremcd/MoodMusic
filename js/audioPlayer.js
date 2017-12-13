@@ -183,6 +183,10 @@ function calculateCurrentValue(currentTime) {
 
 function initProgressBar() {
   var player = document.getElementById('audioPlayer');
+
+  if( player.readyState === 0 ){ //don't load progress bar if audio is not loaded
+    return;
+  }
   var length = player.duration;
   console.log("duration" , length);
   var current_time = player.currentTime;
