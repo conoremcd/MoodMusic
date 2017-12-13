@@ -380,7 +380,7 @@
 					<!-- Desktop Audio Control Panel -->
 					<div class="row drk-pnl control-pnl vertical-align">
 						<div class="col-sm-3">
-							<button id="add" class="edit-btn gr-btn horizontal-align" data-toggle="tooltip" title="Add">
+							<button id="add" class="edit-btn gr-btn horizontal-align" data-toggle="tooltip" title="Add Song">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">add</i>
 							</button>
 						</div>
@@ -401,7 +401,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<button data-toggle="tooltip" title="Rate Song" id="edit" class="edit-btn gr-btn horizontal-align">
+							<button data-toggle="tooltip" title="Edit Song" id="edit" class="edit-btn gr-btn horizontal-align">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">create</i>
 							</button>
 						</div>
