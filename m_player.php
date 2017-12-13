@@ -217,9 +217,6 @@
 										<input class="link-btn" type="submit" value="Pick Me Up" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="Pumped Up" name="moodPref">
-									</li>
-									<li>
 										<input class="link-btn" type="submit" value="Chilled Out" name="moodPref">
 									</li>
 								</ul>
