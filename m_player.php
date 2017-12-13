@@ -208,19 +208,19 @@
 								<ul class="nav">
 								<!-- on load, generate an unordered list of possible moods as button links -->
 									<li>
-										<input class="link-btn" type="submit" value="happy" name="moodPref">
+										<input class="link-btn" type="submit" value="Enjoying Life" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="angry" name="moodPref">
+										<input class="link-btn" type="submit" value="Furious" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="sad" name="moodPref">
+										<input class="link-btn" type="submit" value="Pick Me Up" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="excited" name="moodPref">
+										<input class="link-btn" type="submit" value="Pumped Up" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="relaxed" name="moodPref">
+										<input class="link-btn" type="submit" value="Chilled Out" name="moodPref">
 									</li>
 								</ul>
 							</form>
@@ -310,7 +310,16 @@
                             <div id="album-info" class="row">
                                 <div class="col-sm-2"></div>
 								<div class="col-sm-8 bmprbx">
-									<div class="player-img-lg"></div>
+									<div class="player-img-lg"><img id="album-cover" height="100%" width="100%" /></div>
+									   <div class="player-controls ">
+      										<div id="songInfo"></div>
+      										<span id="seekObjContainer">
+			  									<progress id="seekObj" value="0" max="1"></progress>
+											</span>
+      										<br>
+      										<small class="start-time"></small>
+  											<small class="end-time"></small>
+  										</div>
 								</div>
 								<div class="col-sm-2"></div>
                             </div>
@@ -326,54 +335,56 @@
 											</div>
 											<div class="col-sm-3"></div>
 										</div>
-										<div data-toggle="buttons">
-										    <div class="row bmprbx">
-												<div class="col-sm-3"></div>
-									        	<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn rd">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
-													</label>
+										<form id="color-radio">
+											<div data-toggle="buttons">
+											    <div class="row bmprbx">
+													<div class="col-sm-3"></div>
+										        	<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn rd">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
+														</label>
+													</div>
+													<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn orng">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="orange" autocomplete="off" >
+														</label>
+													</div>
+													<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn yllw">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
+														</label>
+													</div>
+												    <div class="col-sm-3"></div>
 												</div>
-												<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn orng">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="orange" autocomplete="off" >
-													</label>
-												</div>
-												<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn yllw">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
-													</label>
-												</div>
-											    <div class="col-sm-3"></div>
+												<div class="row bmprbx">
+												    <div class="col-sm-3"></div>
+												    <div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn grn">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
+														</label>
+													</div>
+													<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn blu">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="blue" autocomplete="off" >
+														</label>
+													</div>
+													<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn prpl">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
+														</label>
+													</div>
+												    <div class="col-sm-3"></div>
+											    </div>
 											</div>
 											<div class="row bmprbx">
-											    <div class="col-sm-3"></div>
-											    <div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn grn">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
-													</label>
+												<div class="col-sm-7"></div>
+												<div class="col-sm-2">
+													<button class="cnfrm-btn btn btn-sm btn-block" type="submit">Save Song Data</button>
 												</div>
-												<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn blu">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="blue" autocomplete="off" >
-													</label>
-												</div>
-												<div class="col-xs-4 col-sm-2 horizontal-align">
-													<label class="btn clr-slct-btn prpl">
-														<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
-													</label>
-												</div>
-											    <div class="col-sm-3"></div>
-										    </div>
-										</div>
-										<div class="row bmprbx">
-											<div class="col-sm-7"></div>
-											<div class="col-sm-2">
-												<button class="cnfrm-btn btn btn-sm btn-block" type="submit">Save Song Data</button>
+												<div class="col-sm-3"></div>
 											</div>
-											<div class="col-sm-3"></div>
-										</div>
-									</div>
+											</form>
+									</div>                                 
 								</div>
                             </div>
 						</div>
@@ -382,7 +393,7 @@
 					<!-- Desktop Audio Control Panel -->
 					<div class="row drk-pnl control-pnl vertical-align">
 						<div class="col-sm-3">
-							<button id="add" class="edit-btn gr-btn horizontal-align" data-toggle="tooltip" title="Add">
+							<button id="add" class="edit-btn gr-btn horizontal-align" data-toggle="tooltip" title="Add Song">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">add</i>
 							</button>
 						</div>
@@ -403,7 +414,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<button data-toggle="tooltip" title="Rate Song" id="edit" class="edit-btn gr-btn horizontal-align">
+							<button data-toggle="tooltip" title="Edit Song" id="edit" class="edit-btn gr-btn horizontal-align">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">create</i>
 							</button>
 						</div>
@@ -439,7 +450,7 @@
 			$color=null;
 	}
 	
-    echo "<audio src='' controls id='audioPlayer' style='display: none'></audio>";
+    echo "<audio src='' id='audioPlayer'></audio>";
     $file = "audio_player/DefaultPlaylist.txt";
     $file = fopen($file, "r") or die("Unable to open file!");
     echo '<ul id="playlist" style="display: none;">';
@@ -476,10 +487,10 @@
 				$artist = $row['artist'];
 				$song = $row['songname'];
 				if ($start === 1) {
-				echo "<li class='current-song'><a href=$link>". $artist . " - " . $song . "</a></li>";
+				echo "<li class='current-song'><a href=$link data-artist='{$artist}' data-song='{$song}'>". $artist . " - " . $song . "</a></li>";
 				$start = 0;
 				} else {
-					echo "<li><a href=$link>". $artist . " - " . $song . "</a></li>";
+					echo "<li><a href=$link data-artist='{$artist}' data-song='{$song}'>". $artist . " - " . $song . "</a></li>";
 				}
 				
 				//echo "Link: {$row['link']}";
@@ -490,5 +501,10 @@
     ?>
     <script>
 		audioPlayer();
+
+		$(document).ready(function(){
+			$('#audioPlayer').on("timeupdate" , initProgressBar);
+   			$('[data-toggle="tooltip"]').tooltip();   
+		});
     </script>
 </html>

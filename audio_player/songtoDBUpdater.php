@@ -47,7 +47,7 @@ $file = "DefaultPlaylist3.txt";
                 $colors =$array[$start+4];
             
                 $sqlQuery = "UPDATE $table
-							SET moods = '$moods', colors = '$colors'
+							SET colors = '$colors'
 							WHERE songname = '$songname'";
 				
                            //$start = $start + 5;
