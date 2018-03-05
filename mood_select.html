@@ -7,9 +7,9 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/page_template.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/mood_select.js"></script>
 	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  	<script type="text/javascript" src="js/login.js"></script>
 	</head>
 	<body>
 		<header>
@@ -51,10 +51,10 @@
 												<label><input type="radio" name="moodPref" value="happy" checked="checked">Enjoying Life</label>
 											</div>
 											<div class="radio">
-												<label><input type="radio" name="moodPref" value="sad">Some Type of Way</label>
+												<label><input type="radio" name="moodPref" value="sad">Pick Me Up</label>
 											</div>
 											<div class="radio">
-												<label><input type="radio" name="moodPref" value="angry">Pumped Up</label>
+												<label><input type="radio" name="moodPref" value="angry">Furious</label>
 											</div>
 											<div class="radio">
 												<label><input type="radio" name="moodPref" value="relaxed">Chilled Out</label>
@@ -74,40 +74,54 @@
 								</form>
 						    </div>
 						    <div id="color" class="tab-pane fade">
-								<form action="m_player.php" method="post">
+								<form id="color-form" action="m_player.php" method="post">
 						  			<div class="row">
 										<div class="col-xs-12 col-sm-12 bmprbx">
 											<h5 class="drk-h">Select a color that matches your mood and click Load Playlist!</h5>
 										</div>
 									</div>
-									<div class="row bmprbx">
-										<div class="col-xs-4 col-sm-2 horizontal-align">
-											<button class="btn clr-slct-btn rd" name="colorPref" value="red"></button>
+									<div data-toggle="buttons">
+										<div class="row bmprbx">
+											<div class="col-xs-4 col-sm-2 horizontal-align">
+												<label class="btn clr-slct-btn rd">
+													<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
+												</label>
+											</div>
+											<div class="col-xs-4 col-sm-2 horizontal-align">
+												<label class="btn clr-slct-btn orng">
+													<input class="color-radio-btn" type="radio" name="colorPref" value="orange" autocomplete="off" >
+												</label>
+											</div>
+											<div class="col-xs-4 col-sm-2 horizontal-align">
+												<label class="btn clr-slct-btn yllw">
+													<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
+												</label>
+											</div>
+											<div class="col-sm-6"></div>
 										</div>
-										<div class="col-xs-4 col-sm-2 horizontal-align">
-											<button class="btn clr-slct-btn orng" name="colorPref" value="orange"></button>
+										<div class="row bmprbx">
+											<div class="col-xs-4 col-sm-2 horizontal-align">
+												<label class="btn clr-slct-btn grn">
+													<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
+												</label>
+											</div>
+											<div class="col-xs-4 col-sm-2 horizontal-align">
+												<label class="btn clr-slct-btn blu">
+													<input class="color-radio-btn" type="radio" name="colorPref" value="blue" autocomplete="off" >
+												</label>
+											</div>
+											<div class="col-xs-4 col-sm-2 horizontal-align">
+												<label class="btn clr-slct-btn prpl">
+													<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
+												</label>
+											</div>
+											<div class="col-sm-6"></div>
 										</div>
-										<div class="col-xs-4 col-sm-2 horizontal-align">
-											<button class="btn clr-slct-btn yllw" name="colorPref" value="yellow"></button>
-										</div>
-										<div class="col-sm-6"></div>
-									</div>
-									<div class="row bmprbx">
-										<div class="col-xs-4 col-sm-2 horizontal-align">
-											<button class="btn clr-slct-btn grn" name="colorPref" value="green"></button>
-										</div>
-										<div class="col-xs-4 col-sm-2 horizontal-align">
-											<button class="btn clr-slct-btn blu" name="colorPref" value="blue"></button>
-										</div>
-										<div class="col-xs-4 col-sm-2 horizontal-align">
-											<button class="btn clr-slct-btn prpl" name="colorPref" value="purple"></button>
-										</div>
-										<div class="col-sm-6"></div>
 									</div>
 									<div class="row pnl">
 										<div class="col-sm-8"></div>
 										<div class="col-xs-12 col-sm-3">
-											<button class="cnfrm-btn btn btn-md btn-block" type="submit">
+											<button  id="colorPrefBtn" class="cnfrm-btn btn btn-md btn-block" type="submit" disabled>
 												Load Playlist
 											</button>
 										</div>

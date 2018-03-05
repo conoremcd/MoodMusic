@@ -1,7 +1,3 @@
-<?php
-    require_once('dbInfo.php');
-	$db = new mysqli($servername, $username, $password, $base)
-?>
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
@@ -14,9 +10,8 @@
 	  <link rel="stylesheet" href="css/page_template.css">
 	  <link rel="stylesheet" href="css/m_player.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src="js/audioPlayer.js"></script>
-      <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 	</head>
 	<body>
 		<!-- Mobile Elements -->
@@ -209,24 +204,20 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-<!--						<form action="music_player.html" onsubmit="return getMood(this)" method="post">-->
 							<form action="m_player.php" method="post">
 								<ul class="nav">
 								<!-- on load, generate an unordered list of possible moods as button links -->
 									<li>
-										<input class="link-btn" type="submit" value="happy" name="moodPref">
+										<input class="link-btn" type="submit" value="Enjoying Life" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="angry" name="moodPref">
+										<input class="link-btn" type="submit" value="Furious" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="sad" name="moodPref">
+										<input class="link-btn" type="submit" value="Pick Me Up" name="moodPref">
 									</li>
 									<li>
-										<input class="link-btn" type="submit" value="excited" name="moodPref">
-									</li>
-									<li>
-										<input class="link-btn" type="submit" value="relaxed" name="moodPref">
+										<input class="link-btn" type="submit" value="Chilled Out" name="moodPref">
 									</li>
 								</ul>
 							</form>
@@ -255,41 +246,57 @@
 												<div class="row bmprbx">
 													<p class="gr-h horizontal-align sd-nav-cntnt">Select a color and click Load Playlist!</p>
 												</div>
-												<div class="row bmprbx">
-													<div class="col-sm-2"></div>
-												    <div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn rd sd-nav-cntnt" name="colorPref" value="red"></button>
-												    </div>
-													<div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn orng sd-nav-cntnt" name="colorPref" value="orange"></button>
-													</div>
-													<div class="col-xs-4 col-sm-3 horizontal-align">
-														<button class="clr-slct-btn yllw sd-nav-cntnt" name="colorPref" value="yellow"></button>
-													</div>
-													<div class="col-sm-1"></div>
-												</div>
-												<div class="row bmprbx">
-													<div class="col-sm-2"></div>
-														<div class="col-xs-4 col-sm-3 horizontal-align">
-															<button class="clr-slct-btn grn sd-nav-cntnt" name="colorPref" value="green"></button>
+                                                <form action="m_player.php" method="post">
+                                                	<div data-toggle="buttons">
+	                                                    <div class="row bmprbx">
+	                                                        <div class="col-sm-2"></div>
+	                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                            <label class="btn clr-slct-btn rd">
+																	<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
+																</label>
+	                                                        </div>
+	                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                            <label class="btn clr-slct-btn orng">
+																	<input class="color-radio-btn" type="radio" name="colorPref" value="orange" autocomplete="off" >
+																</label>
+	                                                        </div>
+	                                                        <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                            <label class="btn clr-slct-btn yllw">
+																	<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
+																</label>
+	                                                        </div>
+	                                                        <div class="col-sm-1"></div>
+	                                                    </div>
+	                                                    <div class="row bmprbx">
+	                                                        <div class="col-sm-2"></div>
+	                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                                <label class="btn clr-slct-btn grn">
+																		<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
+																	</label>
+	                                                            </div>
+	                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                                <label class="btn clr-slct-btn blu">
+																		<input class="color-radio-btn" type="radio" name="colorPref" value="blue" autocomplete="off" >
+																	</label>
+	                                                            </div>
+	                                                            <div class="col-xs-4 col-sm-3 horizontal-align">
+	                                                                <label class="btn clr-slct-btn prpl">
+																		<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
+																	</label>
+	                                                            </div>
+	                                                        <div class="col-sm-1"></div>
+	                                                    </div>
+                                                    </div>
+													<div class="row bmprbox">
+														<br>
+														<br>
+														<div class="col-sm-8"></div>
+														<div class="col-sm-3">
+															<button class="cnfrm-btn btn btn-sm btn-block sd-nav-cntnt" type="submit">Load Playlist</button>
 														</div>
-														<div class="col-xs-4 col-sm-3 horizontal-align">
-															<button class="clr-slct-btn blu sd-nav-cntnt" name="colorPref" value="blue"></button>
-														</div>
-														<div class="col-xs-4 col-sm-3 horizontal-align">
-															<button class="clr-slct-btn prpl sd-nav-cntnt" name="colorPref" value="purple"></button>
-														</div>
-													<div class="col-sm-1"></div>
-												</div>
-												<div class="row bmprbox">
-													<br>
-													<br>
-													<div class="col-sm-8"></div>
-													<div class="col-sm-3">
-														<button class="cnfrm-btn btn btn-sm btn-block sd-nav-cntnt" type="submit">Load Playlist</button>
+														<div class="col-sm-1"></div>
 													</div>
-													<div class="col-sm-1"></div>
-												</div>
+												</form>
 											</div>
 										</div>
 									</div>
@@ -300,7 +307,16 @@
                             <div id="album-info" class="row">
                                 <div class="col-sm-2"></div>
 								<div class="col-sm-8 bmprbx">
-									<div class="player-img-lg"></div>
+									<div class="player-img-lg"><img id="album-cover" height="100%" width="100%" /></div>
+									   <div class="player-controls ">
+      										<div id="songInfo"></div>
+      										<span id="seekObjContainer">
+			  									<progress id="seekObj" value="0" max="1"></progress>
+											</span>
+      										<br>
+      										<small class="start-time"></small>
+  											<small class="end-time"></small>
+  										</div>
 								</div>
 								<div class="col-sm-2"></div>
                             </div>
@@ -309,34 +325,63 @@
                             <div id="edit-pnl" class="row hidden">
 								<div class="col-sm-12">
 									<div class="row bmprbx">
-										<h5 class="drk-h">How does this song make you feel?</h5>
-									</div>
-								    <div class="row bmprbx">
-										<div class="col-sm-3"></div>
-								        <div class="col-xs-4 col-sm-2 horizontal-align">
-								            <button class="clr-slct-btn rd" name="colorPref" value="red"></button>
-								        </div>
-										<div class="col-xs-4 col-sm-2 horizontal-align">
-											<button class="clr-slct-btn orng" name="colorPref" value="orange"></button>
-									    </div>
-									    <div class="col-xs-4 col-sm-2 horizontal-align">
-									        <button class="clr-slct-btn yllw" name="colorPref" value="yellow"></button>
-									    </div>
-									    <div class="col-sm-3"></div>
-									</div>
-									<div class="row bmprbx">
-									    <div class="col-sm-3"></div>
-									    <div class="col-xs-4 col-sm-2 horizontal-align">
-									        <button class="clr-slct-btn grn" name="colorPref" value="green"></button>
-									    </div>
-									    <div class="col-xs-4 col-sm-2 horizontal-align">
-									        <button class="clr-slct-btn blu" name="colorPref" value="blue"></button>
+										<div class="row bmprbx">
+											<div class="col-sm-3"></div>
+											<div class="col-sm-6">
+												<h3 class="drk-h horizontal-align">How does this song make you feel?</h3>
+											</div>
+											<div class="col-sm-3"></div>
 										</div>
-									    <div class="col-xs-4 col-sm-2 horizontal-align">
-										    <button class="clr-slct-btn prpl" name="colorPref" value="purple"></button>
-									    </div>
-									    <div class="col-sm-3"></div>
-								    </div>
+										<form id="color-radio">
+											<div data-toggle="buttons">
+											    <div class="row bmprbx">
+													<div class="col-sm-3"></div>
+										        	<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn rd">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="red" autocomplete="off" checked="checked">
+														</label>
+													</div>
+													<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn orng">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="orange" autocomplete="off" >
+														</label>
+													</div>
+													<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn yllw">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="yellow" autocomplete="off" >
+														</label>
+													</div>
+												    <div class="col-sm-3"></div>
+												</div>
+												<div class="row bmprbx">
+												    <div class="col-sm-3"></div>
+												    <div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn grn">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="green" autocomplete="off" >
+														</label>
+													</div>
+													<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn blu">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="blue" autocomplete="off" >
+														</label>
+													</div>
+													<div class="col-xs-4 col-sm-2 horizontal-align">
+														<label class="btn clr-slct-btn prpl">
+															<input class="color-radio-btn" type="radio" name="colorPref" value="purple" autocomplete="off" >
+														</label>
+													</div>
+												    <div class="col-sm-3"></div>
+											    </div>
+											</div>
+											<div class="row bmprbx">
+												<div class="col-sm-7"></div>
+												<div class="col-sm-2">
+													<button class="cnfrm-btn btn btn-sm btn-block" type="submit">Save Song Data</button>
+												</div>
+												<div class="col-sm-3"></div>
+											</div>
+											</form>
+									</div>                                 
 								</div>
                             </div>
 						</div>
@@ -345,28 +390,28 @@
 					<!-- Desktop Audio Control Panel -->
 					<div class="row drk-pnl control-pnl vertical-align">
 						<div class="col-sm-3">
-							<button id="add" class="edit-btn gr-btn horizontal-align">
+							<button id="add" class="edit-btn gr-btn horizontal-align" data-toggle="tooltip" title="Add Song">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">add</i>
 							</button>
 						</div>
 						<div class="col-sm-6">
 							<div class="audio-btn-group">
-								<button id="previous" class="audio-btn gr-btn">
+								<button id="previous" class="audio-btn gr-btn" data-toggle="tooltip" title="Previous Track">
 									<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_previous</i>
 								</button>
-								<button id="play" class="play audio-btn gr-btn hidden">
+								<button id="play" class="play audio-btn gr-btn hidden" data-toggle="tooltip" title="Play">
 									<i class="material-icons" style="font-size: 36px; vertical-align: middle;">play_arrow</i>
 								</button>
-								<button id="pause" class="pause audio-btn gr-btn">
+								<button id="pause" class="pause audio-btn gr-btn" data-toggle="tooltip" title="Pause">
 									<i class="material-icons" style="font-size: 36px; vertical-align: middle;">pause</i>
 								</button>
-								<button id="next" class="audio-btn gr-btn">
+								<button id="next" class="audio-btn gr-btn" data-toggle="tooltip" title="Next Track">
 									<i class="material-icons" style="font-size: 24px; vertical-align: middle;">skip_next</i>
 								</button>
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<button id="edit" class="edit-btn gr-btn horizontal-align">
+							<button data-toggle="tooltip" title="Edit Song" id="edit" class="edit-btn gr-btn horizontal-align">
 								<i class="material-icons" style="font-size: 20px; vertical-align: middle;">create</i>
 							</button>
 						</div>
@@ -384,9 +429,12 @@
 			</div>
 		</footer>
 	</body>
-	
 	<?php
 	
+    require_once('dbInfo.php');
+	require_once('songtoDBLoader.php');
+	$db = new mysqli($host, $user, $password, $database);
+
 	$mood = "";
 	$color = "";
 	
@@ -400,10 +448,10 @@
 			$color=null;
 	}
 	
-    echo "<audio src='' controls id='audioPlayer' style='display: none'></audio>";
+    echo "<audio src='' id='audioPlayer'></audio>";
     $file = "audio_player/DefaultPlaylist.txt";
     $file = fopen($file, "r") or die("Unable to open file!");
-    echo '<ul id="playlist">';
+    echo '<ul id="playlist" style="display: none;">';
     $start = 1;
 	
 	if ($db->connect_error) {
@@ -437,42 +485,23 @@
 				$artist = $row['artist'];
 				$song = $row['songname'];
 				if ($start === 1) {
-				echo "<li class='current-song'><a href=$link>". $artist . " - " . $song . "</a></li>";
+				echo "<li class='current-song'><a href=$link data-artist='{$artist}' data-song='{$song}'>". $artist . " - " . $song . "</a></li>";
 				$start = 0;
 				} else {
-					echo "<li><a href=$link>". $artist . " - " . $song . "</a></li>";
+					echo "<li><a href=$link data-artist='{$artist}' data-song='{$song}'>". $artist . " - " . $song . "</a></li>";
 				}
-				
-				//echo "Link: {$row['link']}";
 			}
 		}
 	}
-		
-//    while(!feof($file)) {
-//				
-//		
-//        $line = fgets($file);
-//        if($line === false) break;
-//        $array = explode("||", $line);
-//        
-//		echo "<pre>".$array[3]."/n"."</pre>";
-//		
-//		if ( ( ( ( $mood != null ) && strpos($array[3], $mood) ) || ( $color != null && (strpos($array[4], $color)) ) ) || ($mood==null
-//																										&& $color==null)) {
-//		
-//			if ($start === 1) {
-//				echo "<li class='current-song' style='display: none;'><a href=$array[2]>" . " - " . "</a></li>";
-//				$start = 0;
-//			} else {
-//				echo "<li style='display: none;'><a href=$array[2]>" . " - " . "</a></li>";
-//			}
-//		
-//		} 
-//    }
+
     echo '</ul>';
     ?>
     <script>
 		audioPlayer();
-		
+
+		$(document).ready(function(){
+			$('#audioPlayer').on("timeupdate" , initProgressBar);
+   			$('[data-toggle="tooltip"]').tooltip();   
+		});
     </script>
 </html>

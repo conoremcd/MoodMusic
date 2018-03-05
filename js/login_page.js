@@ -17,8 +17,10 @@ function validateLogin(theForm) {
 		//prompt error message
 		if ($(window).width() < 760) {
 			$("#lgn_err_xs").attr("class", "row visible-xs-block msg");
+
 		} else {
 			$("#lgn_err").attr("class", "row hidden-xs msg");
+			$("#login-error-lg").html();
 		}
 
 		return false;

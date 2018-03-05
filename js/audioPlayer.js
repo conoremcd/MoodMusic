@@ -1,5 +1,68 @@
 function audioPlayer() {
     var currentSong = 0;
+
+
+    function updateAlbumCover(songName){
+        var albumCover = null;
+        switch (songName){
+            case 'Silence':
+                albumCover = "silence";
+                break;
+            case 'You and Me':
+                albumCover = "you_and_me";
+                break;
+            case 'Alone':
+                albumCover = "alone";
+                break;
+            case 'PTSD':
+                albumCover = "ptsd";
+                break;
+            case 'Born Sinner':
+                albumCover = "born_sinner";
+                break;
+            case 'Ill Mind of Hopsin':
+                albumCover = "ill_mind_of_hopsin";
+                break;
+            case 'See You Again':
+                albumCover = "see_you_again";
+                break;
+            case 'Goosebumps':
+                albumCover = "goosebumps";
+                break;
+            case '1-800-273-8255':
+                albumCover = "18002738255";
+                break;
+            case 'Starboy':
+                albumCover = "starboy";
+                break;
+            case 'Through the Late Night':
+                albumCover = "through_the_late_night";
+                break;
+            case 'Let Nas Down':
+                albumCover = "let_nas_down";
+                break;
+            case "I Stand Alone":
+                albumCover = "i_stand_alone";
+                break;
+            default:
+                albumCover = "default";
+        }
+        $("#album-cover").get(0).src = "images/album-covers/" + albumCover +".jpg"; 
+    }
+
+    function updateSongInfo(currentSong){
+        var audioElement = $("#playlist li a").get(currentSong);
+        var artist = $(audioElement).data('artist');
+        artist = artist.trim();
+        var song = $(audioElement).data('song');
+        song = song.trim();
+
+        updateAlbumCover(song);
+
+        $("#songInfo").html( song + "<br>" + artist);
+    }
+
+    updateSongInfo(currentSong);
     $("#audioPlayer")[0].src = $("#playlist li a")[0];
     $("#audioPlayer")[0].play();
     $("#playlist li a").click(function (event) {
@@ -17,8 +80,13 @@ function audioPlayer() {
         currentSong++;
         if (currentSong === $("#playlist li a").length)
             currentSong = 0;
+
+        updateSongInfo(currentSong);
         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
         $("#audioPlayer")[0].play();
+        //show pause button since we want to autoplay the next track
+        $("#play").addClass("hidden");
+        $("#pause").removeClass("hidden");
         $("#playlist li").removeClass("current-song");
         $("#playlist li:eq("+currentSong+")").addClass("current-song");
         $(this).parent().addClass("current-song");
@@ -28,8 +96,12 @@ function audioPlayer() {
     $("#previous").click(function (event) {
         event.preventDefault();
         currentSong--;
+        updateSongInfo(currentSong);
         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
         $("#audioPlayer")[0].play();
+        //show pause button since we want to autoplay the next track
+        $("#play").addClass("hidden");
+        $("#pause").removeClass("hidden");
         $("#playlist li").removeClass("current-song");
         $("#playlist li:eq("+currentSong+")").addClass("current-song");
         $(this).parent().addClass("current-song");
@@ -46,6 +118,8 @@ function audioPlayer() {
         $("#play").addClass("hidden");
         $("#pause").removeClass("hidden");
     });
+
+
     
 	 $("#edit").click(function (event) {
         toggle = document.getElementById("edit-pnl").classList.contains('hidden');
@@ -138,3 +212,57 @@ function audioPlayer() {
         $("#audioPlayer")[0].play();
     });
 }
+
+function calculateTotalValue(length) {
+  var minutes = Math.floor(length / 60);
+    seconds_int = length - minutes * 60;
+    seconds_str = seconds_int < 10 ? "0" + seconds_int.toString() : seconds_int.toString();
+    seconds = seconds_str.substr(0, 2);
+    time = minutes + ':' + seconds;
+
+  return time;
+}
+
+function calculateCurrentValue(currentTime) {
+  var current_hour = parseInt(currentTime / 3600) % 24,
+    current_minute = parseInt(currentTime / 60) % 60,
+    current_seconds_long = currentTime % 60,
+    current_seconds = current_seconds_long.toFixed(),
+    current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
+
+  return current_time;
+}
+
+function initProgressBar() {
+  var player = document.getElementById('audioPlayer');
+
+  if( player.readyState === 0 ){ //don't load progress bar if audio is not loaded
+    return;
+  }
+  var length = player.duration;
+  console.log("duration" , length);
+  var current_time = player.currentTime;
+
+  // calculate total length of value
+  var totalLength = calculateTotalValue(length)
+  jQuery(".end-time").html(totalLength);
+
+  // calculate current value time
+  var currentTime = calculateCurrentValue(current_time);
+  jQuery(".start-time").html(currentTime);
+
+  var progressbar = document.getElementById('seekObj');
+  progressbar.value = (player.currentTime / player.duration);
+  progressbar.addEventListener("click", seek);
+
+  if (player.currentTime == player.duration) {
+    $('#play-btn').removeClass('pause');
+  }
+
+
+  function seek(evt) {
+    var percent = evt.offsetX / this.offsetWidth;
+    player.currentTime = percent * player.duration;
+    progressbar.value = percent / 100;
+  }
+};
